@@ -1,0 +1,345 @@
+/* =========================================================
+   DEEP SPACE THEME FOR JELLYFIN
+   Design: Immense, cosmique, silencieux
+   Colors: Bleu nuit absolu, violet nébuleuse, or stellaire
+   ========================================================= */
+
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(2, 4, 18, 0.2) 0%,
+            rgba(5, 8, 30, 0.55) 50%,
+            rgba(1, 3, 12, 0.88) 100%
+        ),
+        url("https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+:root {
+    --space-void: #02041A;
+    --space-deep: #05081E;
+    --space-mid: #0D1240;
+    --space-nebula: #6B2DFF;
+    --space-star: #FFE066;
+    --space-teal: #00B4D8;
+    --space-pink: #E040FB;
+    --text-light: #EEF2FF;
+    --text-muted: #8BA0CC;
+}
+
+.skinHeader {
+    background: linear-gradient(180deg, rgba(2, 4, 18, 0.97) 0%, rgba(5, 8, 30, 0.94) 100%) !important;
+    backdrop-filter: blur(14px) saturate(180%);
+    border-bottom: 1px solid rgba(107, 45, 255, 0.18);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 0 60px rgba(107, 45, 255, 0.03);
+}
+
+.headerLogo {
+    filter: brightness(1.2) drop-shadow(0 0 12px rgba(107, 45, 255, 0.6));
+}
+
+.mainDrawer, .dialog, .emby-dialog, .drawer-open, .actionSheetContent {
+    background: linear-gradient(145deg, rgba(2, 4, 18, 0.98) 0%, rgba(13, 18, 64, 0.96) 100%) !important;
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(107, 45, 255, 0.12);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.98);
+}
+
+.navMenuOption {
+    border-radius: 8px;
+    margin: 4px 8px;
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navMenuOption:hover {
+    background: rgba(107, 45, 255, 0.1) !important;
+    border-left: 3px solid var(--space-teal);
+    transform: translateX(4px);
+    color: var(--space-teal) !important;
+    text-shadow: 0 0 10px rgba(0, 180, 216, 0.6);
+}
+
+.card {
+    background: rgba(5, 8, 30, 0.4) !important;
+    border: 1px solid rgba(107, 45, 255, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(5, 8, 30, 0.4) !important;
+    border: 1px solid rgba(107, 45, 255, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(5, 8, 30, 0.4) !important;
+    border: 1px solid rgba(107, 45, 255, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 12px 50px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(107, 45, 255, 0.3),
+        0 0 50px rgba(0, 180, 216, 0.1);
+    border-color: rgba(107, 45, 255, 0.4);
+}
+
+.cardOverlayButton, .cardOverlayContainer {
+    background: linear-gradient(to top, rgba(2, 4, 18, 0.97) 0%, rgba(2, 4, 18, 0.7) 50%, rgba(2, 4, 18, 0) 100%) !important;
+}
+
+body, .pageTitle, .sectionTitle, .listItemBodyText {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-light) !important;
+    letter-spacing: 0.02em;
+}
+
+.sectionTitle {
+    font-size: 1.75em !important;
+    font-weight: 600 !important;
+    color: var(--space-teal) !important;
+    text-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+    margin-bottom: 24px !important;
+    letter-spacing: 0.025em;
+}
+
+.pageTitle {
+    font-size: 2.2em !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #FFE066 0%, #6B2DFF 50%, #00B4D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.itemName, .cardText {
+    color: #F0F4FF !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cardText-secondary, .metadataLine, .secondaryText {
+    color: var(--text-muted) !important;
+    font-size: 0.9em;
+}
+
+.button-flat, .raised, .fab, .emby-button {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button-flat:hover, .raised:hover, .emby-button:hover {
+    border-color: var(--space-nebula);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(107, 45, 255, 0.4);
+}
+
+.btnPlay {
+    background: linear-gradient(135deg, #6B2DFF 0%, #00B4D8 100%) !important;
+    color: #EEF2FF !important;
+    font-weight: 600 !important;
+    border: none;
+    box-shadow: 0 4px 20px rgba(107, 45, 255, 0.4);
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #8B4DFF 0%, #00D4FF 100%) !important;
+    box-shadow: 0 8px 32px rgba(107, 45, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+.emby-tab-button {
+    color: var(--text-muted) !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.emby-tab-button:hover {
+    color: var(--space-teal) !important;
+    border-bottom-color: rgba(0, 180, 216, 0.4);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--space-star) !important;
+    border-bottom-color: var(--space-star);
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 224, 102, 0.6);
+}
+
+.itemProgressBar {
+    background: rgba(107, 45, 255, 0.2) !important;
+    box-shadow: 0 0 8px rgba(107, 45, 255, 0.15);
+}
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #6B2DFF 0%, #00B4D8 100%) !important;
+    box-shadow: 0 0 10px rgba(107, 45, 255, 0.7);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(2, 4, 18, 0.6); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0D1240 0%, #05081E 100%);
+    border-radius: 5px;
+    border: 2px solid rgba(107, 45, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6B2DFF 0%, #00B4D8 100%);
+    border-color: rgba(107, 45, 255, 0.5);
+    box-shadow: 0 0 8px rgba(107, 45, 255, 0.5);
+}
+
+.videoOsdBottom { background: linear-gradient(to top, rgba(2, 4, 18, 0.97) 0%, rgba(2, 4, 18, 0) 100%) !important; }
+.osdHeader { background: linear-gradient(to bottom, rgba(2, 4, 18, 0.97) 0%, rgba(2, 4, 18, 0) 100%) !important; }
+
+.detailImageContainer {
+    border-radius: 10px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(5, 8, 30, 0.5) !important;
+    border: 1px solid rgba(107, 45, 255, 0.2);
+    box-shadow: 0 0 30px rgba(107, 45, 255, 0.15);
+    padding: 0 !important;
+}
+.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
+.itemBackdrop { filter: brightness(0.65) saturate(1.3); }
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    background: rgba(5, 8, 30, 0.7) !important;
+    border: 1px solid rgba(107, 45, 255, 0.2) !important;
+    border-radius: 8px;
+    color: var(--text-light) !important;
+    padding: 10px 14px;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--space-teal) !important;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+    outline: none;
+}
+
+.mediaInfoItem, .itemTag {
+    background: rgba(107, 45, 255, 0.15) !important;
+    color: var(--space-teal) !important;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+* { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.itemsContainer, .scrollSlider { animation: spaceFadeIn 0.9s ease-out; }
+
+@keyframes spaceFadeIn {
+    from { opacity: 0; transform: scale(0.98); filter: blur(3px); }
+    to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+.card:hover { animation: cosmicPulse 4s ease-in-out infinite; }
+
+@keyframes cosmicPulse {
+    0%, 100% { box-shadow: 0 12px 50px rgba(0,0,0,.9), 0 0 20px rgba(107,45,255,.3); }
+    50% { box-shadow: 0 12px 50px rgba(0,0,0,.9), 0 0 30px rgba(0,180,216,.3); }
+}
+
+@media (max-width: 768px) {
+    .sectionTitle { font-size: 1.4em !important; }
+    .pageTitle { font-size: 1.8em !important; }
+}
+
+/* Starfield glow */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(107, 45, 255, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(0, 180, 216, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 20% 60%, rgba(255, 224, 102, 0.04) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+    animation: cosmicDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicDrift {
+    from { opacity: 0.8; }
+    to { opacity: 1; transform: scale(1.02); }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}

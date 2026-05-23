@@ -1,0 +1,424 @@
+/* =========================================================
+   SUNSET SYNTHWAVE THEME FOR JELLYFIN
+   Design: Rétro 80s, électrique, nostalgique
+   Colors: Violet coucher de soleil, rose chaud, orange arcade
+   ========================================================= */
+
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(20, 5, 30, 0.35) 0%,
+            rgba(30, 8, 45, 0.6) 50%,
+            rgba(12, 3, 20, 0.88) 100%
+        ),
+        url("https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+:root {
+    --synth-dark: #140520;
+    --synth-deep: #1E082D;
+    --synth-mid: #2E1045;
+    --synth-purple: #7B00FF;
+    --synth-pink: #FF2D9B;
+    --synth-orange: #FF6B35;
+    --synth-yellow: #FFD23F;
+    --synth-cyan: #00F0FF;
+    --text-light: #FDEEFF;
+    --text-muted: #C87FCC;
+}
+
+.skinHeader {
+    background: linear-gradient(180deg, rgba(20, 5, 30, 0.97) 0%, rgba(30, 8, 45, 0.94) 100%) !important;
+    backdrop-filter: blur(14px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 45, 155, 0.2);
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.8),
+        0 1px 0 rgba(123, 0, 255, 0.15),
+        0 0 40px rgba(255, 45, 155, 0.05);
+}
+
+.headerLogo {
+    filter: brightness(1.2) drop-shadow(0 0 12px rgba(255, 45, 155, 0.7));
+}
+
+.mainDrawer, .dialog, .emby-dialog, .drawer-open, .actionSheetContent {
+    background: linear-gradient(145deg, rgba(20, 5, 30, 0.98) 0%, rgba(46, 16, 69, 0.96) 100%) !important;
+    backdrop-filter: blur(22px) saturate(200%);
+    border: 1px solid rgba(123, 0, 255, 0.15);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.9), inset 0 0 60px rgba(255, 45, 155, 0.02);
+}
+
+.navMenuOption {
+    border-radius: 6px;
+    margin: 4px 8px;
+    padding: 12px 16px;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.04em;
+}
+
+.navMenuOption:hover {
+    background: rgba(255, 45, 155, 0.1) !important;
+    border-left: 3px solid var(--synth-pink);
+    transform: translateX(5px);
+    color: var(--synth-cyan) !important;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+.card {
+    background: rgba(30, 8, 45, 0.45) !important;
+    border: 1px solid rgba(123, 0, 255, 0.12) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Bottom neon line on hover */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 10%; right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FF2D9B, #7B00FF, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 2px;
+}
+.card:hover::after { opacity: 1; }
+
+.card.overflowPortraitCard {
+    background: rgba(30, 8, 45, 0.45) !important;
+    border: 1px solid rgba(123, 0, 255, 0.12) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(30, 8, 45, 0.45) !important;
+    border: 1px solid rgba(123, 0, 255, 0.12) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.7),
+        0 0 22px rgba(255, 45, 155, 0.3),
+        0 0 45px rgba(123, 0, 255, 0.15);
+    border-color: rgba(255, 45, 155, 0.4);
+}
+
+.cardOverlayButton, .cardOverlayContainer {
+    background: linear-gradient(to top, rgba(20, 5, 30, 0.97) 0%, rgba(20, 5, 30, 0.7) 50%, rgba(20, 5, 30, 0) 100%) !important;
+}
+
+body, .pageTitle, .sectionTitle, .listItemBodyText {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-light) !important;
+    letter-spacing: 0.02em;
+}
+
+.sectionTitle {
+    font-size: 1.75em !important;
+    font-weight: 700 !important;
+    color: var(--synth-pink) !important;
+    text-shadow:
+        0 0 12px rgba(255, 45, 155, 0.8),
+        0 0 30px rgba(255, 45, 155, 0.4);
+    margin-bottom: 24px !important;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.pageTitle {
+    font-size: 2.2em !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #FFD23F 0%, #FF6B35 30%, #FF2D9B 65%, #7B00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.itemName, .cardText {
+    color: #FDEEFF !important;
+    font-weight: 500 !important;
+    text-shadow: 0 0 8px rgba(123, 0, 255, 0.3);
+}
+
+.cardText-secondary, .metadataLine, .secondaryText {
+    color: var(--text-muted) !important;
+    font-size: 0.9em;
+}
+
+.button-flat, .raised, .fab, .emby-button {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: all 0.28s ease;
+    letter-spacing: 0.04em;
+}
+
+.button-flat:hover, .raised:hover, .emby-button:hover {
+    border-color: var(--synth-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(123, 0, 255, 0.4);
+}
+
+.btnPlay {
+    background: linear-gradient(135deg, #FF2D9B 0%, #7B00FF 100%) !important;
+    color: #FDEEFF !important;
+    font-weight: 700 !important;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    box-shadow: 0 4px 22px rgba(255, 45, 155, 0.5);
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF2D9B 50%, #7B00FF 100%) !important;
+    box-shadow: 0 8px 35px rgba(255, 45, 155, 0.7);
+    transform: translateY(-3px);
+}
+
+.emby-tab-button {
+    color: var(--text-muted) !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.28s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85em;
+}
+
+.emby-tab-button:hover {
+    color: var(--synth-cyan) !important;
+    border-bottom-color: rgba(0, 240, 255, 0.4);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--synth-pink) !important;
+    border-bottom-color: var(--synth-pink);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 45, 155, 0.8);
+}
+
+.itemProgressBar {
+    background: rgba(123, 0, 255, 0.2) !important;
+    height: 4px;
+    border-radius: 2px;
+}
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #7B00FF 0%, #FF2D9B 60%, #FF6B35 100%) !important;
+    box-shadow: 0 0 10px rgba(255, 45, 155, 0.7);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(20, 5, 30, 0.6); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2E1045 0%, #1E082D 100%);
+    border-radius: 5px;
+    border: 2px solid rgba(255, 45, 155, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF2D9B 0%, #7B00FF 100%);
+    border-color: rgba(255, 45, 155, 0.5);
+    box-shadow: 0 0 10px rgba(255, 45, 155, 0.6);
+}
+
+.videoOsdBottom { background: linear-gradient(to top, rgba(20, 5, 30, 0.97) 0%, rgba(20, 5, 30, 0) 100%) !important; }
+.osdHeader { background: linear-gradient(to bottom, rgba(20, 5, 30, 0.97) 0%, rgba(20, 5, 30, 0) 100%) !important; }
+
+.detailImageContainer {
+    border-radius: 6px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(30, 8, 45, 0.5) !important;
+    border: 1px solid rgba(255, 45, 155, 0.2);
+    box-shadow: 0 0 25px rgba(123, 0, 255, 0.2);
+    padding: 0 !important;
+}
+.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
+.itemBackdrop { filter: brightness(0.65) saturate(1.4); }
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    background: rgba(30, 8, 45, 0.7) !important;
+    border: 1px solid rgba(123, 0, 255, 0.25) !important;
+    border-radius: 6px;
+    color: var(--text-light) !important;
+    padding: 10px 14px;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--synth-pink) !important;
+    box-shadow: 0 0 0 3px rgba(255, 45, 155, 0.15), 0 0 15px rgba(255, 45, 155, 0.08);
+    outline: none;
+}
+
+.mediaInfoItem, .itemTag {
+    background: rgba(255, 45, 155, 0.12) !important;
+    color: var(--synth-cyan) !important;
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.78em;
+    letter-spacing: 0.07em;
+}
+
+* { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.itemsContainer, .scrollSlider { animation: synthFadeIn 0.7s ease-out; }
+
+@keyframes synthFadeIn {
+    from { opacity: 0; transform: translateY(20px); filter: hue-rotate(-20deg) brightness(0.8); }
+    to { opacity: 1; transform: translateY(0); filter: hue-rotate(0deg) brightness(1); }
+}
+
+.card:hover { animation: synthPulse 3s ease-in-out infinite; }
+
+@keyframes synthPulse {
+    0%, 100% { box-shadow: 0 12px 40px rgba(0,0,0,.7), 0 0 22px rgba(255,45,155,.3); }
+    50% { box-shadow: 0 12px 40px rgba(0,0,0,.7), 0 0 28px rgba(123,0,255,.4); }
+}
+
+@media (max-width: 768px) {
+    .sectionTitle { font-size: 1.35em !important; }
+    .pageTitle { font-size: 1.7em !important; }
+}
+
+/* Retrowave grid floor */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background:
+        linear-gradient(to bottom, transparent 0%, rgba(123, 0, 255, 0.04) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 40px,
+            rgba(255, 45, 155, 0.06) 40px,
+            rgba(255, 45, 155, 0.06) 41px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 60px,
+            rgba(123, 0, 255, 0.06) 60px,
+            rgba(123, 0, 255, 0.06) 61px
+        );
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+}
+
+/* Sunset sky glow */
+.backgroundContainer::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 107, 53, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 40%, rgba(255, 45, 155, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 30%, rgba(123, 0, 255, 0.07) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    animation: sunsetGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes sunsetGlow {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* Scanlines */
+.itemsContainer::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 3px,
+        rgba(255, 45, 155, 0.02) 3px,
+        rgba(255, 45, 155, 0.02) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}

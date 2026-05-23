@@ -1,0 +1,590 @@
+/* =========================================================
+   GRUVBOX THEME FOR JELLYFIN
+   Design: Chaleureux, rétro, confortable
+   Colors: Marron crème, orange brûlé, beige chaud
+   Inspiration: Gruvbox color scheme
+   ========================================================= */
+
+/* =========================================================
+   FOND - Cabane rustique au coucher du soleil
+   ========================================================= */
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom, 
+            rgba(40, 40, 40, 0.3) 0%,
+            rgba(50, 48, 47, 0.6) 50%,
+            rgba(29, 32, 33, 0.85) 100%
+        ),
+        url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+/* =========================================================
+   PALETTE DE COULEURS GRUVBOX
+   ========================================================= */
+:root {
+    --gruvbox-bg0: #282828;
+    --gruvbox-bg1: #3c3836;
+    --gruvbox-bg2: #504945;
+    --gruvbox-bg3: #665c54;
+    --gruvbox-fg: #ebdbb2;
+    --gruvbox-fg2: #d5c4a1;
+    --gruvbox-fg3: #bdae93;
+    --gruvbox-red: #fb4934;
+    --gruvbox-orange: #fe8019;
+    --gruvbox-yellow: #fabd2f;
+    --gruvbox-green: #b8bb26;
+    --gruvbox-aqua: #8ec07c;
+    --gruvbox-blue: #83a598;
+    --gruvbox-purple: #d3869b;
+}
+
+/* =========================================================
+   HEADER - Barre supérieure chaleureuse
+   ========================================================= */
+.skinHeader {
+    background: linear-gradient(
+        180deg,
+        rgba(40, 40, 40, 0.95) 0%,
+        rgba(60, 56, 54, 0.92) 100%
+    ) !important;
+    backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 2px solid rgba(254, 128, 25, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Jellyfin avec lueur orange */
+.headerLogo {
+    filter: brightness(1.15) drop-shadow(0 0 10px rgba(254, 128, 25, 0.4));
+}
+
+/* =========================================================
+   SIDEBAR & MENUS - Effet bois chaleureux
+   ========================================================= */
+.mainDrawer,
+.dialog,
+.emby-dialog,
+.drawer-open,
+.actionSheetContent {
+    background: linear-gradient(
+        145deg,
+        rgba(40, 40, 40, 0.97) 0%,
+        rgba(60, 56, 54, 0.95) 100%
+    ) !important;
+    backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(254, 128, 25, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Items du menu avec hover orange vif */
+.navMenuOption {
+    border-radius: 10px;
+    margin: 5px 10px;
+    padding: 14px 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--gruvbox-fg2) !important;
+}
+
+.navMenuOption:hover {
+    background: rgba(254, 128, 25, 0.15) !important;
+    border-left: 4px solid var(--gruvbox-orange);
+    transform: translateX(6px);
+    color: var(--gruvbox-orange) !important;
+    box-shadow: 0 2px 12px rgba(254, 128, 25, 0.2);
+}
+
+.navMenuOption-selected {
+    background: rgba(254, 128, 25, 0.2) !important;
+    border-left: 4px solid var(--gruvbox-yellow);
+    color: var(--gruvbox-yellow) !important;
+}
+
+/* =========================================================
+   CARTES DE MÉDIAS - Style vintage
+   ========================================================= */
+.card {
+    background: rgba(60, 56, 54, 0.5) !important;
+    border: 1px solid rgba(254, 128, 25, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(60, 56, 54, 0.5) !important;
+    border: 1px solid rgba(254, 128, 25, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(60, 56, 54, 0.5) !important;
+    border: 1px solid rgba(254, 128, 25, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(254, 128, 25, 0.2),
+        0 0 40px rgba(250, 189, 47, 0.1);
+    border-color: rgba(254, 128, 25, 0.3);
+}
+
+/* Overlay des cartes au hover */
+.cardOverlayButton,
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(40, 40, 40, 0.98) 0%,
+        rgba(40, 40, 40, 0.75) 50%,
+        rgba(40, 40, 40, 0) 100%
+    ) !important;
+}
+
+.cardOverlayButton:hover {
+    background: rgba(254, 128, 25, 0.9) !important;
+    color: #282828 !important;
+}
+
+/* =========================================================
+   TYPOGRAPHIE - Rétro et lisible
+   ========================================================= */
+body,
+.pageTitle,
+.sectionTitle,
+.listItemBodyText {
+    font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+    color: var(--gruvbox-fg) !important;
+    letter-spacing: 0.02em;
+}
+
+/* Titres de sections */
+.sectionTitle {
+    font-size: 1.8em !important;
+    font-weight: 700 !important;
+    color: var(--gruvbox-orange) !important;
+    text-shadow: 
+        0 2px 8px rgba(254, 128, 25, 0.4),
+        0 0 20px rgba(254, 128, 25, 0.2);
+    margin-bottom: 28px !important;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 1.5em !important;
+}
+
+/* Titres de page */
+.pageTitle {
+    font-size: 2.4em !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #fabd2f 0%, #fe8019 50%, #fb4934 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    letter-spacing: 0.01em;
+}
+
+/* Noms de médias */
+.itemName,
+.cardText {
+    color: #fbf1c7 !important;
+    font-weight: 600 !important;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Texte secondaire */
+.cardText-secondary,
+.metadataLine,
+.secondaryText {
+    color: var(--gruvbox-fg3) !important;
+    font-size: 0.92em;
+    font-weight: 500;
+}
+
+/* =========================================================
+   BOUTONS - Style rétro chaleureux
+   ========================================================= */
+.button-flat,
+.raised,
+.fab,
+.emby-button {
+    color: var(--gruvbox-fg) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.button-flat:hover,
+.raised:hover,
+.emby-button:hover {
+    background: rgba(254, 128, 25, 0.15) !important;
+    border-color: var(--gruvbox-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(254, 128, 25, 0.3);
+}
+
+/* Bouton play principal */
+.btnPlay {
+    background: linear-gradient(135deg, #fe8019 0%, #fabd2f 100%) !important;
+    color: #282828 !important;
+    font-weight: 700 !important;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #fabd2f 0%, #fe8019 100%) !important;
+    box-shadow: 0 8px 28px rgba(254, 128, 25, 0.5);
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   ONGLETS - Design vintage
+   ========================================================= */
+.emby-tab-button {
+    color: var(--gruvbox-fg3) !important;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.emby-tab-button:hover {
+    color: var(--gruvbox-orange) !important;
+    border-bottom-color: rgba(254, 128, 25, 0.4);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--gruvbox-yellow) !important;
+    border-bottom-color: var(--gruvbox-yellow);
+    font-weight: 700;
+    background: rgba(250, 189, 47, 0.1);
+}
+
+/* =========================================================
+   BARRE DE PROGRESSION - Orange vif
+   ========================================================= */
+.itemProgressBar {
+    background: rgba(254, 128, 25, 0.3) !important;
+    box-shadow: 0 0 12px rgba(254, 128, 25, 0.3);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #fe8019 0%, #fabd2f 100%) !important;
+    box-shadow: 0 0 10px rgba(254, 128, 25, 0.6);
+}
+
+/* =========================================================
+   SCROLLBAR - Style bois vintage
+   ========================================================= */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(40, 40, 40, 0.6);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #665c54 0%, #504945 100%);
+    border-radius: 6px;
+    border: 2px solid rgba(254, 128, 25, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #7c6f64 0%, #665c54 100%);
+    border-color: rgba(254, 128, 25, 0.5);
+    box-shadow: 0 0 8px rgba(254, 128, 25, 0.3);
+}
+
+/* =========================================================
+   PLAYER VIDÉO - Interface minimaliste
+   ========================================================= */
+.videoOsdBottom {
+    background: linear-gradient(
+        to top,
+        rgba(40, 40, 40, 0.98) 0%,
+        rgba(40, 40, 40, 0) 100%
+    ) !important;
+}
+
+.osdHeader {
+    background: linear-gradient(
+        to bottom,
+        rgba(40, 40, 40, 0.98) 0%,
+        rgba(40, 40, 40, 0) 100%
+    ) !important;
+}
+
+/* Contrôles du player */
+.osdTextContainer {
+    color: var(--gruvbox-fg) !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================
+   DÉTAILS MÉDIA - Page détaillée
+   ========================================================= */
+.detailImageContainer {
+    border-radius: 12px;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(60, 56, 54, 0.5) !important;
+    border: 1px solid rgba(254, 128, 25, 0.1);
+    padding: 0 !important;
+}
+
+/* Image du poster bien contenue */
+.detailImageContainer img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.itemBackdrop {
+    filter: brightness(0.75) saturate(1.3) contrast(1.1);
+}
+
+/* Détails textuels */
+.detailsPageContent {
+    color: var(--gruvbox-fg) !important;
+}
+
+/* =========================================================
+   INPUTS & FORMS - Style cohérent
+   ========================================================= */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(60, 56, 54, 0.7) !important;
+    border: 2px solid rgba(254, 128, 25, 0.25) !important;
+    border-radius: 10px;
+    color: var(--gruvbox-fg) !important;
+    padding: 12px 16px;
+    font-weight: 500;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gruvbox-orange) !important;
+    box-shadow: 0 0 0 4px rgba(254, 128, 25, 0.2);
+    outline: none;
+    background: rgba(80, 73, 69, 0.8) !important;
+}
+
+/* Placeholder */
+::placeholder {
+    color: var(--gruvbox-fg3) !important;
+    opacity: 0.7;
+}
+
+/* =========================================================
+   BADGES & LABELS - Style vintage
+   ========================================================= */
+.mediaInfoItem,
+.itemTag {
+    background: rgba(254, 128, 25, 0.2) !important;
+    color: var(--gruvbox-yellow) !important;
+    border: 1px solid rgba(250, 189, 47, 0.4);
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+}
+
+.mediaInfoItem:hover {
+    background: rgba(254, 128, 25, 0.3) !important;
+    border-color: var(--gruvbox-orange);
+}
+
+/* =========================================================
+   RATINGS & STARS - Orange chaleureux
+   ========================================================= */
+.starIcon {
+    color: var(--gruvbox-yellow) !important;
+    filter: drop-shadow(0 0 4px rgba(250, 189, 47, 0.6));
+}
+
+.criticRating {
+    color: var(--gruvbox-orange) !important;
+    font-weight: 700;
+}
+
+/* =========================================================
+   ANIMATIONS FLUIDES
+   ========================================================= */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet d'apparition chaleureuse */
+.itemsContainer,
+.scrollSlider {
+    animation: fadeInWarm 0.7s ease-out;
+}
+
+@keyframes fadeInWarm {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: brightness(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: brightness(1);
+    }
+}
+
+/* Pulse subtil au hover */
+.card:hover .cardImageContainer {
+    animation: warmPulse 2s ease-in-out infinite;
+}
+
+@keyframes warmPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(254, 128, 25, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(250, 189, 47, 0.5);
+    }
+}
+
+/* =========================================================
+   NOTIFICATIONS - Style toast chaleureux
+   ========================================================= */
+.toast {
+    background: linear-gradient(135deg, #504945 0%, #3c3836 100%) !important;
+    border-left: 4px solid var(--gruvbox-orange);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    color: var(--gruvbox-fg) !important;
+}
+
+/* =========================================================
+   RESPONSIVE - Optimisé mobile
+   ========================================================= */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 1.3em !important;
+    }
+    
+    .pageTitle {
+        font-size: 1.9em !important;
+    }
+    
+    .navMenuOption {
+        padding: 12px 14px;
+    }
+    
+    .card:hover {
+        transform: translateY(-6px) scale(1.02);
+    }
+}
+
+/* =========================================================
+   TOUCHES FINALES - Effet papier vintage
+   ========================================================= */
+.itemsContainer::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(254, 128, 25, 0.02) 2px,
+            rgba(254, 128, 25, 0.02) 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}

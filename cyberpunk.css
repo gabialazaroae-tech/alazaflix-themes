@@ -1,0 +1,460 @@
+/* =========================================================
+   CYBERPUNK THEME FOR JELLYFIN
+   Design: Violent, électrique, dystopique
+   Colors: Violet néon, magenta, noir absolu
+   ========================================================= */
+
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(5, 0, 15, 0.4) 0%,
+            rgba(10, 0, 25, 0.65) 50%,
+            rgba(3, 0, 10, 0.88) 100%
+        ),
+        url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+:root {
+    --cyber-black: #05000F;
+    --cyber-dark: #0D0020;
+    --cyber-mid: #1A0035;
+    --cyber-violet: #9B30FF;
+    --cyber-magenta: #FF006E;
+    --cyber-pink: #FF2D9B;
+    --cyber-cyan: #00F5FF;
+    --cyber-green: #39FF14;
+    --text-light: #F0E6FF;
+    --text-muted: #B87FFF;
+}
+
+/* HEADER */
+.skinHeader {
+    background: linear-gradient(
+        180deg,
+        rgba(5, 0, 15, 0.97) 0%,
+        rgba(13, 0, 32, 0.92) 100%
+    ) !important;
+    backdrop-filter: blur(14px) saturate(200%);
+    border-bottom: 1px solid rgba(155, 48, 255, 0.3);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.8),
+        0 1px 0 rgba(255, 0, 110, 0.2),
+        inset 0 -1px 0 rgba(155, 48, 255, 0.15);
+}
+
+.headerLogo {
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(155, 48, 255, 0.8)) hue-rotate(10deg);
+}
+
+/* SIDEBAR */
+.mainDrawer,
+.dialog,
+.emby-dialog,
+.drawer-open,
+.actionSheetContent {
+    background: linear-gradient(
+        145deg,
+        rgba(5, 0, 15, 0.98) 0%,
+        rgba(13, 0, 32, 0.96) 100%
+    ) !important;
+    backdrop-filter: blur(24px) saturate(220%);
+    border: 1px solid rgba(155, 48, 255, 0.2);
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.9),
+        inset 0 0 80px rgba(155, 48, 255, 0.03);
+}
+
+.navMenuOption {
+    border-radius: 4px;
+    margin: 3px 10px;
+    padding: 12px 18px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-muted) !important;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+}
+
+.navMenuOption:hover {
+    background: rgba(155, 48, 255, 0.12) !important;
+    border-left: 3px solid var(--cyber-magenta);
+    transform: translateX(5px);
+    color: var(--cyber-cyan) !important;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
+}
+
+/* CARDS */
+.card {
+    background: rgba(13, 0, 32, 0.5) !important;
+    border: 1px solid rgba(155, 48, 255, 0.15) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyber-violet), var(--cyber-magenta), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(13, 0, 32, 0.5) !important;
+    border: 1px solid rgba(155, 48, 255, 0.15) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(13, 0, 32, 0.5) !important;
+    border: 1px solid rgba(155, 48, 255, 0.15) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(155, 48, 255, 0.4),
+        0 0 50px rgba(255, 0, 110, 0.15);
+    border-color: rgba(155, 48, 255, 0.5);
+}
+
+.cardOverlayButton,
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(5, 0, 15, 0.98) 0%,
+        rgba(5, 0, 15, 0.7) 50%,
+        rgba(5, 0, 15, 0) 100%
+    ) !important;
+}
+
+/* TYPOGRAPHY */
+body,
+.pageTitle,
+.sectionTitle,
+.listItemBodyText {
+    font-family: 'Courier New', 'IBM Plex Mono', monospace;
+    color: var(--text-light) !important;
+    letter-spacing: 0.03em;
+}
+
+.sectionTitle {
+    font-size: 1.6em !important;
+    font-weight: 700 !important;
+    color: var(--cyber-cyan) !important;
+    text-shadow:
+        0 0 10px rgba(0, 245, 255, 0.8),
+        0 0 30px rgba(0, 245, 255, 0.4);
+    margin-bottom: 24px !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.pageTitle {
+    font-size: 2.2em !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #FF006E 0%, #9B30FF 50%, #00F5FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.itemName,
+.cardText {
+    color: #F0E6FF !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 8px rgba(155, 48, 255, 0.5);
+}
+
+.cardText-secondary,
+.metadataLine,
+.secondaryText {
+    color: var(--text-muted) !important;
+    font-size: 0.88em;
+}
+
+/* BUTTONS */
+.button-flat,
+.raised,
+.fab,
+.emby-button {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.06em;
+}
+
+.button-flat:hover,
+.raised:hover,
+.emby-button:hover {
+    border-color: var(--cyber-violet);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(155, 48, 255, 0.4);
+}
+
+.btnPlay {
+    background: linear-gradient(135deg, #9B30FF 0%, #FF006E 100%) !important;
+    color: #F0E6FF !important;
+    font-weight: 700 !important;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 20px rgba(155, 48, 255, 0.5);
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #FF006E 0%, #9B30FF 100%) !important;
+    box-shadow: 0 8px 32px rgba(255, 0, 110, 0.6), 0 0 40px rgba(155, 48, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* TABS */
+.emby-tab-button {
+    color: var(--text-muted) !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85em;
+}
+
+.emby-tab-button:hover {
+    color: var(--cyber-cyan) !important;
+    border-bottom-color: rgba(0, 245, 255, 0.4);
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.6);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--cyber-magenta) !important;
+    border-bottom-color: var(--cyber-magenta);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 0, 110, 0.8);
+}
+
+/* PROGRESS BAR */
+.itemProgressBar {
+    background: rgba(155, 48, 255, 0.2) !important;
+    box-shadow: 0 0 8px rgba(155, 48, 255, 0.15);
+    height: 4px;
+    border-radius: 2px;
+}
+
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #9B30FF 0%, #FF006E 100%) !important;
+    box-shadow: 0 0 10px rgba(155, 48, 255, 0.8);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(5, 0, 15, 0.6); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #9B30FF 0%, #FF006E 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(155, 48, 255, 0.6);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF006E 0%, #9B30FF 100%);
+    box-shadow: 0 0 12px rgba(255, 0, 110, 0.8);
+}
+
+/* VIDEO PLAYER */
+.videoOsdBottom {
+    background: linear-gradient(to top, rgba(5, 0, 15, 0.97) 0%, rgba(5, 0, 15, 0) 100%) !important;
+}
+.osdHeader {
+    background: linear-gradient(to bottom, rgba(5, 0, 15, 0.97) 0%, rgba(5, 0, 15, 0) 100%) !important;
+}
+
+/* MEDIA DETAILS */
+.detailImageContainer {
+    border-radius: 4px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(13, 0, 32, 0.5) !important;
+    border: 1px solid rgba(155, 48, 255, 0.3);
+    box-shadow: 0 0 20px rgba(155, 48, 255, 0.2);
+    padding: 0 !important;
+}
+.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
+.itemBackdrop { filter: brightness(0.65) saturate(1.4); }
+
+/* INPUTS */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(13, 0, 32, 0.7) !important;
+    border: 1px solid rgba(155, 48, 255, 0.3) !important;
+    border-radius: 2px;
+    color: var(--text-light) !important;
+    padding: 10px 14px;
+    font-family: 'Courier New', monospace;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--cyber-cyan) !important;
+    box-shadow: 0 0 0 2px rgba(0, 245, 255, 0.2), 0 0 15px rgba(0, 245, 255, 0.1);
+    outline: none;
+}
+
+/* BADGES */
+.mediaInfoItem,
+.itemTag {
+    background: rgba(155, 48, 255, 0.15) !important;
+    color: var(--cyber-cyan) !important;
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    font-family: 'Courier New', monospace;
+}
+
+/* ANIMATIONS CSS */
+* { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.itemsContainer,
+.scrollSlider {
+    animation: cyberFadeIn 0.6s ease-out;
+}
+
+@keyframes cyberFadeIn {
+    from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes cyberGlitch {
+    0%, 90%, 100% { transform: translateY(-8px) scale(1.02); }
+    91% { transform: translateY(-8px) scale(1.02) translateX(2px); }
+    93% { transform: translateY(-8px) scale(1.02) translateX(-2px); }
+    95% { transform: translateY(-8px) scale(1.02) translateX(1px); }
+}
+
+.card:hover { animation: cyberGlitch 4s ease-in-out infinite; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sectionTitle { font-size: 1.3em !important; }
+    .pageTitle { font-size: 1.8em !important; }
+}
+
+/* SCANLINES */
+.itemsContainer::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(155, 48, 255, 0.03) 2px,
+        rgba(155, 48, 255, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Ambient glow */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(155, 48, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(255, 0, 110, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}

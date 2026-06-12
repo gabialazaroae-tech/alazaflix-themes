@@ -1,0 +1,801 @@
+/* =========================================================
+   NETFLIX STYLE THEME FOR JELLYFIN
+   Design: Élégant, cinématique, professionnel
+   Colors: Rouge Netflix, noir profond, gris élégant
+   Inspiration: Netflix UI 2024
+   ========================================================= */
+
+/* =========================================================
+   FOND - Cinéma sombre avec projecteur
+   ========================================================= */
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom, 
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(20, 20, 20, 0.7) 50%,
+            rgba(0, 0, 0, 0.9) 100%
+        ),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+/* =========================================================
+   PALETTE DE COULEURS NETFLIX
+   ========================================================= */
+:root {
+    --netflix-red: #E50914;
+    --netflix-red-dark: #B20710;
+    --netflix-red-light: #F40612;
+    --netflix-black: #000000;
+    --netflix-dark-gray: #141414;
+    --netflix-gray: #2F2F2F;
+    --netflix-light-gray: #B3B3B3;
+    --netflix-white: #FFFFFF;
+    --netflix-text: #E5E5E5;
+}
+
+/* =========================================================
+   HEADER - Barre supérieure Netflix signature
+   ========================================================= */
+.skinHeader {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(20, 20, 20, 0.95) 100%
+    ) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo Jellyfin avec style Netflix */
+.headerLogo {
+    filter: brightness(1.2) drop-shadow(0 0 12px rgba(229, 9, 20, 0.5));
+}
+
+/* Barre de recherche style Netflix */
+.headerSearchButton {
+    color: var(--netflix-white) !important;
+}
+
+/* =========================================================
+   SIDEBAR & MENUS - Design épuré Netflix
+   ========================================================= */
+.mainDrawer,
+.dialog,
+.emby-dialog,
+.drawer-open,
+.actionSheetContent {
+    background: linear-gradient(
+        145deg,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(20, 20, 20, 0.96) 100%
+    ) !important;
+    backdrop-filter: blur(25px) saturate(180%);
+    border: none;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Items du menu avec hover rouge Netflix */
+.navMenuOption {
+    border-radius: 6px;
+    margin: 3px 12px;
+    padding: 16px 20px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--netflix-text) !important;
+    font-weight: 500;
+}
+
+.navMenuOption:hover {
+    background: rgba(229, 9, 20, 0.1) !important;
+    color: var(--netflix-white) !important;
+    transform: translateX(4px);
+}
+
+.navMenuOption-selected {
+    background: var(--netflix-red) !important;
+    color: var(--netflix-white) !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+}
+
+/* =========================================================
+   CARTES DE MÉDIAS - Style Netflix Cards
+   ========================================================= */
+.card {
+    background: rgba(20, 20, 20, 0.5) !important;
+    border: 1px solid rgba(229, 9, 20, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(20, 20, 20, 0.5) !important;
+    border: 1px solid rgba(229, 9, 20, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(20, 20, 20, 0.5) !important;
+    border: 1px solid rgba(229, 9, 20, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(229, 9, 20, 0.3);
+    z-index: 10;
+}
+
+/* Effet Netflix hover avec preview */
+.cardImageContainer {
+    transition: all 0.35s ease;
+}
+
+.card:hover .cardImageContainer {
+    filter: brightness(1.15) contrast(1.1);
+}
+
+/* Overlay des cartes au hover - Style Netflix */
+.cardOverlayButton,
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0) 100%
+    ) !important;
+}
+
+.cardOverlayButton {
+    background: var(--netflix-red) !important;
+    color: var(--netflix-white) !important;
+    border: none !important;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cardOverlayButton:hover {
+    background: var(--netflix-red-light) !important;
+    box-shadow: 0 4px 16px rgba(229, 9, 20, 0.6);
+}
+
+/* =========================================================
+   TYPOGRAPHIE - Style Netflix moderne
+   ========================================================= */
+body,
+.pageTitle,
+.sectionTitle,
+.listItemBodyText {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--netflix-text) !important;
+    letter-spacing: -0.01em;
+}
+
+/* Titres de sections - Bold Netflix */
+.sectionTitle {
+    font-size: 1.6em !important;
+    font-weight: 700 !important;
+    color: var(--netflix-white) !important;
+    margin-bottom: 20px !important;
+    letter-spacing: -0.02em;
+    text-transform: none;
+}
+
+/* Titres de page - Extra bold */
+.pageTitle {
+    font-size: 2.8em !important;
+    font-weight: 800 !important;
+    color: var(--netflix-white) !important;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Noms de médias */
+.itemName,
+.cardText {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Texte secondaire */
+.cardText-secondary,
+.metadataLine,
+.secondaryText {
+    color: var(--netflix-light-gray) !important;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+/* =========================================================
+   BOUTONS - Style Netflix signature
+   ========================================================= */
+.button-flat,
+.raised,
+.fab,
+.emby-button {
+    color: var(--netflix-white) !important;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    border-radius: 4px;
+}
+
+.button-flat:hover,
+.raised:hover,
+.emby-button:hover {
+    background: rgba(229, 9, 20, 0.15) !important;
+    transform: translateY(-1px);
+}
+
+/* Bouton play - Rouge Netflix iconique */
+.btnPlay {
+    background: var(--netflix-red) !important;
+    color: var(--netflix-white) !important;
+    font-weight: 700 !important;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 12px 32px !important;
+    font-size: 1.1em !important;
+}
+
+.btnPlay:hover {
+    background: var(--netflix-red-light) !important;
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.6);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Bouton info - Style Netflix secondaire */
+.btnInfo {
+    background: rgba(109, 109, 110, 0.7) !important;
+    color: var(--netflix-white) !important;
+    font-weight: 600 !important;
+    border: none;
+}
+
+.btnInfo:hover {
+    background: rgba(109, 109, 110, 0.9) !important;
+}
+
+/* =========================================================
+   ONGLETS - Design Netflix clean
+   ========================================================= */
+.emby-tab-button {
+    color: var(--netflix-light-gray) !important;
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+}
+
+.emby-tab-button:hover {
+    color: var(--netflix-white) !important;
+    border-bottom-color: rgba(229, 9, 20, 0.5);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--netflix-white) !important;
+    border-bottom-color: var(--netflix-red);
+    font-weight: 700;
+}
+
+/* =========================================================
+   BARRE DE PROGRESSION - Rouge Netflix
+   ========================================================= */
+.itemProgressBar {
+    background: rgba(109, 109, 110, 0.5) !important;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.itemProgressBarForeground {
+    background: var(--netflix-red) !important;
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
+}
+
+/* Barre de progression dans le player */
+.sliderBubble {
+    background: var(--netflix-red) !important;
+}
+
+/* =========================================================
+   SCROLLBAR - Minimaliste Netflix
+   ========================================================= */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(109, 109, 110, 0.8);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(229, 9, 20, 0.8);
+}
+
+/* =========================================================
+   PLAYER VIDÉO - Interface Netflix
+   ========================================================= */
+.videoOsdBottom {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.8) 30%,
+        rgba(0, 0, 0, 0) 100%
+    ) !important;
+}
+
+.osdHeader {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.8) 30%,
+        rgba(0, 0, 0, 0) 100%
+    ) !important;
+}
+
+/* Contrôles du player */
+.osdTextContainer {
+    color: var(--netflix-white) !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+}
+
+/* Boutons de contrôle */
+.osdControls button {
+    color: var(--netflix-white) !important;
+}
+
+.osdControls button:hover {
+    color: var(--netflix-red) !important;
+}
+
+/* =========================================================
+   DÉTAILS MÉDIA - Page style Netflix
+   ========================================================= */
+.detailImageContainer {
+    border-radius: 12px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(20, 20, 20, 0.6) !important;
+    border: none;
+    padding: 0 !important;
+}
+
+/* Image du poster bien contenue */
+.detailImageContainer img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.itemBackdrop {
+    filter: brightness(0.7) saturate(1.2) contrast(1.05);
+}
+
+/* Hero banner style Netflix */
+.detailPageContent {
+    color: var(--netflix-text) !important;
+}
+
+.detailPagePrimaryContainer {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+/* =========================================================
+   INPUTS & FORMS - Style Netflix
+   ========================================================= */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(51, 51, 51, 0.8) !important;
+    border: 1px solid rgba(128, 128, 128, 0.4) !important;
+    border-radius: 4px;
+    color: var(--netflix-white) !important;
+    padding: 14px 18px;
+    font-weight: 500;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--netflix-red) !important;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+    outline: none;
+    background: rgba(51, 51, 51, 0.95) !important;
+}
+
+/* Placeholder */
+::placeholder {
+    color: rgba(179, 179, 179, 0.8) !important;
+}
+
+/* =========================================================
+   BADGES & LABELS - Style Netflix
+   ========================================================= */
+.mediaInfoItem,
+.itemTag {
+    background: rgba(229, 9, 20, 0.15) !important;
+    color: var(--netflix-white) !important;
+    border: 1px solid rgba(229, 9, 20, 0.4);
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+}
+
+.mediaInfoItem:hover {
+    background: var(--netflix-red) !important;
+    border-color: var(--netflix-red);
+}
+
+/* Badge "Nouveau" style Netflix */
+.playedIndicator {
+    background: var(--netflix-red) !important;
+    color: var(--netflix-white) !important;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+/* =========================================================
+   RATINGS - Style Netflix IMDb
+   ========================================================= */
+.starIcon {
+    color: #F5C518 !important;
+    filter: drop-shadow(0 0 6px rgba(245, 197, 24, 0.5));
+}
+
+.criticRating {
+    color: var(--netflix-white) !important;
+    font-weight: 700;
+    background: rgba(229, 9, 20, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   HERO BANNER - Style Netflix billboard
+   ========================================================= */
+.detailPageWatchButtonContainer {
+    margin-top: 24px;
+}
+
+.detailPageWatchButtonContainer .btnPlay {
+    padding: 16px 48px !important;
+    font-size: 1.2em !important;
+}
+
+/* Logo du média style Netflix */
+.detailLogo {
+    max-width: 400px;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
+}
+
+/* =========================================================
+   ANIMATIONS - Style Netflix fluide
+   ========================================================= */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet d'apparition Netflix */
+.itemsContainer,
+.scrollSlider {
+    animation: netflixFadeIn 0.5s ease-out;
+}
+
+@keyframes netflixFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Zoom Netflix au hover */
+.card:hover {
+    animation: netflixZoom 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes netflixZoom {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-12px) scale(1.05);
+    }
+}
+
+/* =========================================================
+   CAROUSELS - Sliders Netflix
+   ========================================================= */
+.scrollSlider {
+    padding: 0 4vw;
+}
+
+/* Boutons de navigation carousel */
+.btnNextPage,
+.btnPreviousPage {
+    background: rgba(20, 20, 20, 0.5) !important;
+    color: var(--netflix-white) !important;
+    border: none;
+    width: 4vw;
+    min-width: 60px;
+    height: 100%;
+    transition: all 0.25s ease;
+}
+
+.btnNextPage:hover,
+.btnPreviousPage:hover {
+    background: rgba(20, 20, 20, 0.8) !important;
+}
+
+/* =========================================================
+   NOTIFICATIONS - Toast Netflix
+   ========================================================= */
+.toast {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border-left: 4px solid var(--netflix-red);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    color: var(--netflix-white) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* =========================================================
+   LOGIN PAGE - Style Netflix
+   ========================================================= */
+.loginPage {
+    background: var(--netflix-black) !important;
+}
+
+.readOnlyContent {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* =========================================================
+   RESPONSIVE - Mobile Netflix
+   ========================================================= */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 1.3em !important;
+    }
+    
+    .pageTitle {
+        font-size: 2em !important;
+    }
+    
+    .btnPlay {
+        padding: 10px 24px !important;
+        font-size: 1em !important;
+    }
+    
+    .card:hover {
+        transform: translateY(-8px) scale(1.03);
+    }
+    
+    .scrollSlider {
+        padding: 0 2vw;
+    }
+}
+
+/* =========================================================
+   TOUCHES FINALES - Effet cinéma
+   ========================================================= */
+/* Vignette subtile pour effet cinéma */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Effet scanline très subtil */
+.itemsContainer::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+/* =====================================================================
+   ✦ MODULE ANIMATIONS — ajouté au thème ci-dessus
+   ---------------------------------------------------------------------
+   Révélation au scroll · parallax · reflet glissant · header intelligent.
+   100% neutre : ne touche ni aux couleurs ni aux survols de ton thème.
+   Pour le tilt 3D qui suit la souris + le header qui se masque selon le
+   sens du scroll, ajoute aussi jellyfin-effects.js au client web
+   (voir la notice en haut de ce fichier .js).
+   ===================================================================== */
+
+/* — Révélation des sections quand elles entrent à l'écran (100% CSS) — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .verticalSection {
+      animation: jfRevealUp linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+@keyframes jfRevealUp {
+  from { opacity: 0; transform: translateY(46px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* — Reflet / brillance qui glisse sur les affiches au survol — */
+@media (hover: hover) {
+  .cardImageContainer { position: relative; }
+  .cardImageContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    background: linear-gradient(115deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.28) 47%,
+        rgba(255, 255, 255, 0.06) 55%,
+        transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:hover .cardImageContainer::after { transform: translateX(130%); }
+}
+
+/* — Parallax doux sur les images de fond / backdrops — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .itemBackdrop,
+    .backdropImage {
+      animation: jfParallax linear both;
+      animation-timeline: view(block);
+      animation-range: cover;
+      will-change: transform;
+    }
+  }
+}
+@keyframes jfParallax {
+  from { transform: translateY(-4%) scale(1.1); }
+  to   { transform: translateY(4%)  scale(1.1); }
+}
+
+/* — Header : transition + classes pilotées par jellyfin-effects.js — */
+.skinHeader {
+  transition:
+    transform  0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    background 0.45s ease !important;
+  will-change: transform;
+}
+.skinHeader.jf-header-hidden { transform: translateY(-105%) !important; }
+.skinHeader.jf-header-shrink { box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6) !important; }
+
+/* — Accessibilité : respect de "réduire les animations" — */
+@media (prefers-reduced-motion: reduce) {
+  .skinHeader.jf-header-hidden { transform: none !important; }
+}

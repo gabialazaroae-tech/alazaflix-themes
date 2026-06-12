@@ -1,0 +1,803 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* =========================================================
+   PLEX STYLE THEME FOR JELLYFIN
+   Design: Moderne, lumineux, énergique
+   Colors: Orange Plex, jaune doré, noir élégant
+   Inspiration: Plex Media Server UI
+   ========================================================= */
+
+/* =========================================================
+   FOND - Studio moderne avec lumières chaudes
+   ========================================================= */
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom, 
+            rgba(18, 18, 18, 0.3) 0%,
+            rgba(28, 28, 28, 0.65) 50%,
+            rgba(15, 15, 15, 0.88) 100%
+        ),
+        url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+/* =========================================================
+   PALETTE DE COULEURS PLEX
+   ========================================================= */
+:root {
+    --plex-orange: #E5A00D;
+    --plex-orange-light: #F9BE42;
+    --plex-orange-dark: #CC8E0A;
+    --plex-yellow: #FFCA3A;
+    --plex-black: #1A1A1A;
+    --plex-dark: #282828;
+    --plex-gray: #4A4A4A;
+    --plex-light-gray: #A0A0A0;
+    --plex-white: #F0F0F0;
+    --plex-accent: #FF8C00;
+}
+
+/* =========================================================
+   HEADER - Barre supérieure Plex signature
+   ========================================================= */
+.skinHeader {
+    background: linear-gradient(
+        180deg,
+        rgba(26, 26, 26, 0.96) 0%,
+        rgba(40, 40, 40, 0.94) 100%
+    ) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 2px solid rgba(229, 160, 13, 0.15);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Logo Jellyfin avec lueur orange Plex */
+.headerLogo {
+    filter: brightness(1.2) drop-shadow(0 0 14px rgba(229, 160, 13, 0.5));
+}
+
+/* Boutons header style Plex */
+.headerButton {
+    color: var(--plex-white) !important;
+    transition: all 0.25s ease;
+}
+
+.headerButton:hover {
+    color: var(--plex-orange) !important;
+}
+
+/* =========================================================
+   SIDEBAR & MENUS - Design Plex moderne
+   ========================================================= */
+.mainDrawer,
+.dialog,
+.emby-dialog,
+.drawer-open,
+.actionSheetContent {
+    background: linear-gradient(
+        145deg,
+        rgba(26, 26, 26, 0.97) 0%,
+        rgba(40, 40, 40, 0.95) 100%
+    ) !important;
+    backdrop-filter: blur(22px) saturate(200%);
+    border: 1px solid rgba(229, 160, 13, 0.12);
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Items du menu avec hover orange Plex */
+.navMenuOption {
+    border-radius: 10px;
+    margin: 4px 14px;
+    padding: 15px 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--plex-white) !important;
+    font-weight: 500;
+}
+
+.navMenuOption:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(229, 160, 13, 0.15) 0%,
+        rgba(229, 160, 13, 0.08) 100%
+    ) !important;
+    border-left: 4px solid var(--plex-orange);
+    transform: translateX(5px);
+    color: var(--plex-orange-light) !important;
+    box-shadow: 0 2px 12px rgba(229, 160, 13, 0.2);
+}
+
+.navMenuOption-selected {
+    background: linear-gradient(
+        90deg,
+        rgba(229, 160, 13, 0.25) 0%,
+        rgba(229, 160, 13, 0.12) 100%
+    ) !important;
+    border-left: 4px solid var(--plex-yellow);
+    color: var(--plex-yellow) !important;
+    font-weight: 700;
+}
+
+/* =========================================================
+   CARTES DE MÉDIAS - Style Plex moderne
+   ========================================================= */
+.card {
+    background: rgba(40, 40, 40, 0.5) !important;
+    border: 1px solid rgba(229, 160, 13, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(40, 40, 40, 0.5) !important;
+    border: 1px solid rgba(229, 160, 13, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(40, 40, 40, 0.5) !important;
+    border: 1px solid rgba(229, 160, 13, 0.1) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-14px) scale(1.04);
+    box-shadow: 
+        0 20px 55px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(229, 160, 13, 0.3),
+        0 0 60px rgba(255, 202, 58, 0.15);
+    border-color: rgba(229, 160, 13, 0.4);
+    background: rgba(50, 50, 50, 0.7) !important;
+}
+
+/* Effet de brillance Plex au hover */
+.card:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(229, 160, 13, 0.1) 50%,
+        transparent 70%
+    );
+    animation: plexShine 1.5s ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes plexShine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Overlay des cartes au hover */
+.cardOverlayButton,
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(26, 26, 26, 0.96) 0%,
+        rgba(26, 26, 26, 0.75) 50%,
+        rgba(26, 26, 26, 0) 100%
+    ) !important;
+}
+
+.cardOverlayButton {
+    background: linear-gradient(135deg, #E5A00D 0%, #F9BE42 100%) !important;
+    color: #1A1A1A !important;
+    border: none !important;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.cardOverlayButton:hover {
+    background: linear-gradient(135deg, #F9BE42 0%, #FFCA3A 100%) !important;
+    box-shadow: 0 6px 24px rgba(229, 160, 13, 0.5);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   TYPOGRAPHIE - Style Plex moderne
+   ========================================================= */
+body,
+.pageTitle,
+.sectionTitle,
+.listItemBodyText {
+    font-family: 'Open Sans', 'Roboto', 'Segoe UI', system-ui, sans-serif;
+    color: var(--plex-white) !important;
+    letter-spacing: 0.01em;
+}
+
+/* Titres de sections - Bold Plex */
+.sectionTitle {
+    font-size: 1.75em !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #F9BE42 0%, #E5A00D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px !important;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 15px rgba(229, 160, 13, 0.3);
+}
+
+/* Titres de page */
+.pageTitle {
+    font-size: 2.6em !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #FFCA3A 0%, #F9BE42 50%, #E5A00D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.01em;
+}
+
+/* Noms de médias */
+.itemName,
+.cardText {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Texte secondaire */
+.cardText-secondary,
+.metadataLine,
+.secondaryText {
+    color: var(--plex-light-gray) !important;
+    font-size: 0.92em;
+    font-weight: 500;
+}
+
+/* =========================================================
+   BOUTONS - Style Plex énergique
+   ========================================================= */
+.button-flat,
+.raised,
+.fab,
+.emby-button {
+    color: var(--plex-white) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.button-flat:hover,
+.raised:hover,
+.emby-button:hover {
+    background: rgba(229, 160, 13, 0.15) !important;
+    border-color: var(--plex-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(229, 160, 13, 0.3);
+}
+
+/* Bouton play - Orange Plex signature */
+.btnPlay {
+    background: linear-gradient(135deg, #E5A00D 0%, #F9BE42 100%) !important;
+    color: #1A1A1A !important;
+    font-weight: 800 !important;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 14px 36px !important;
+    font-size: 1.15em !important;
+    box-shadow: 0 4px 20px rgba(229, 160, 13, 0.4);
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #F9BE42 0%, #FFCA3A 100%) !important;
+    box-shadow: 0 10px 40px rgba(229, 160, 13, 0.6);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Bouton secondaire style Plex */
+.btnResume,
+.btnMore {
+    background: rgba(74, 74, 74, 0.8) !important;
+    color: var(--plex-white) !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(229, 160, 13, 0.3);
+}
+
+.btnResume:hover,
+.btnMore:hover {
+    background: rgba(74, 74, 74, 0.95) !important;
+    border-color: var(--plex-orange);
+}
+
+/* =========================================================
+   ONGLETS - Design Plex clean
+   ========================================================= */
+.emby-tab-button {
+    color: var(--plex-light-gray) !important;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.88em;
+    letter-spacing: 0.06em;
+}
+
+.emby-tab-button:hover {
+    color: var(--plex-orange) !important;
+    border-bottom-color: rgba(229, 160, 13, 0.4);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--plex-yellow) !important;
+    border-bottom-color: var(--plex-yellow);
+    font-weight: 700;
+    background: rgba(229, 160, 13, 0.08);
+}
+
+/* =========================================================
+   BARRE DE PROGRESSION - Orange Plex
+   ========================================================= */
+.itemProgressBar {
+    background: rgba(74, 74, 74, 0.6) !important;
+    height: 5px;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #E5A00D 0%, #F9BE42 50%, #FFCA3A 100%) !important;
+    box-shadow: 0 0 12px rgba(229, 160, 13, 0.6);
+}
+
+/* =========================================================
+   SCROLLBAR - Style Plex élégant
+   ========================================================= */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4A4A4A 0%, #282828 100%);
+    border-radius: 6px;
+    border: 2px solid rgba(229, 160, 13, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #E5A00D 0%, #CC8E0A 100%);
+    border-color: rgba(229, 160, 13, 0.5);
+    box-shadow: 0 0 10px rgba(229, 160, 13, 0.4);
+}
+
+/* =========================================================
+   PLAYER VIDÉO - Interface Plex
+   ========================================================= */
+.videoOsdBottom {
+    background: linear-gradient(
+        to top,
+        rgba(26, 26, 26, 0.97) 0%,
+        rgba(26, 26, 26, 0.8) 40%,
+        rgba(26, 26, 26, 0) 100%
+    ) !important;
+}
+
+.osdHeader {
+    background: linear-gradient(
+        to bottom,
+        rgba(26, 26, 26, 0.97) 0%,
+        rgba(26, 26, 26, 0.8) 40%,
+        rgba(26, 26, 26, 0) 100%
+    ) !important;
+}
+
+/* Contrôles du player */
+.osdTextContainer {
+    color: var(--plex-white) !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+}
+
+/* Boutons de contrôle */
+.osdControls button {
+    color: var(--plex-white) !important;
+}
+
+.osdControls button:hover {
+    color: var(--plex-orange) !important;
+}
+
+/* =========================================================
+   DÉTAILS MÉDIA - Page Plex détaillée
+   ========================================================= */
+.detailImageContainer {
+    border-radius: 12px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(40, 40, 40, 0.5) !important;
+    border: 1px solid rgba(229, 160, 13, 0.15);
+    padding: 0 !important;
+}
+
+/* Image du poster bien contenue */
+.detailImageContainer img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.itemBackdrop {
+    filter: brightness(0.75) saturate(1.25) contrast(1.08);
+}
+
+/* Hero section style Plex */
+.detailPagePrimaryContainer {
+    background: linear-gradient(
+        to right,
+        rgba(26, 26, 26, 0.95) 0%,
+        rgba(26, 26, 26, 0.75) 50%,
+        rgba(26, 26, 26, 0.3) 100%
+    );
+}
+
+/* =========================================================
+   INPUTS & FORMS - Style Plex
+   ========================================================= */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(40, 40, 40, 0.75) !important;
+    border: 2px solid rgba(229, 160, 13, 0.25) !important;
+    border-radius: 10px;
+    color: var(--plex-white) !important;
+    padding: 14px 18px;
+    font-weight: 500;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--plex-orange) !important;
+    box-shadow: 0 0 0 4px rgba(229, 160, 13, 0.2);
+    outline: none;
+    background: rgba(50, 50, 50, 0.9) !important;
+}
+
+/* Placeholder */
+::placeholder {
+    color: var(--plex-light-gray) !important;
+    opacity: 0.7;
+}
+
+/* =========================================================
+   BADGES & LABELS - Style Plex
+   ========================================================= */
+.mediaInfoItem,
+.itemTag {
+    background: rgba(229, 160, 13, 0.2) !important;
+    color: var(--plex-yellow) !important;
+    border: 1px solid rgba(229, 160, 13, 0.4);
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+}
+
+.mediaInfoItem:hover {
+    background: linear-gradient(135deg, #E5A00D 0%, #F9BE42 100%) !important;
+    color: #1A1A1A !important;
+    border-color: var(--plex-yellow);
+}
+
+/* =========================================================
+   RATINGS - Style Plex moderne
+   ========================================================= */
+.starIcon {
+    color: #FFCA3A !important;
+    filter: drop-shadow(0 0 8px rgba(255, 202, 58, 0.6));
+}
+
+.criticRating {
+    color: var(--plex-white) !important;
+    font-weight: 700;
+    background: linear-gradient(135deg, #E5A00D 0%, #F9BE42 100%);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+/* =========================================================
+   ANIMATIONS - Style Plex fluide
+   ========================================================= */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet d'apparition Plex */
+.itemsContainer,
+.scrollSlider {
+    animation: plexFadeIn 0.6s ease-out;
+}
+
+@keyframes plexFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Pulse orange au hover */
+.card:hover .cardImageContainer {
+    animation: plexGlow 2s ease-in-out infinite;
+}
+
+@keyframes plexGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(229, 160, 13, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 202, 58, 0.5);
+    }
+}
+
+/* =========================================================
+   CAROUSELS - Sliders Plex
+   ========================================================= */
+.scrollSlider {
+    padding: 0 3.5vw;
+}
+
+/* Boutons de navigation */
+.btnNextPage,
+.btnPreviousPage {
+    background: linear-gradient(135deg, rgba(229, 160, 13, 0.3) 0%, rgba(229, 160, 13, 0.5) 100%) !important;
+    color: var(--plex-white) !important;
+    border: 1px solid rgba(229, 160, 13, 0.4);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.btnNextPage:hover,
+.btnPreviousPage:hover {
+    background: linear-gradient(135deg, #E5A00D 0%, #F9BE42 100%) !important;
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(229, 160, 13, 0.5);
+}
+
+/* =========================================================
+   NOTIFICATIONS - Toast Plex
+   ========================================================= */
+.toast {
+    background: linear-gradient(135deg, #282828 0%, #1A1A1A 100%) !important;
+    border-left: 5px solid var(--plex-orange);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    color: var(--plex-white) !important;
+    backdrop-filter: blur(15px);
+}
+
+/* =========================================================
+   RESPONSIVE - Mobile Plex
+   ========================================================= */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 1.4em !important;
+    }
+    
+    .pageTitle {
+        font-size: 2em !important;
+    }
+    
+    .btnPlay {
+        padding: 12px 28px !important;
+        font-size: 1em !important;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+    }
+}
+
+/* =========================================================
+   TOUCHES FINALES - Effet de lumière Plex
+   ========================================================= */
+/* Lueur ambiante orange */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at 50% 50%,
+        rgba(229, 160, 13, 0.05) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Particules lumineuses subtiles */
+@keyframes floatParticles {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.6;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+/* =====================================================================
+   ✦ MODULE ANIMATIONS — ajouté au thème ci-dessus
+   ---------------------------------------------------------------------
+   Révélation au scroll · parallax · reflet glissant · header intelligent.
+   100% neutre : ne touche ni aux couleurs ni aux survols de ton thème.
+   Pour le tilt 3D qui suit la souris + le header qui se masque selon le
+   sens du scroll, ajoute aussi jellyfin-effects.js au client web
+   (voir la notice en haut de ce fichier .js).
+   ===================================================================== */
+
+/* — Révélation des sections quand elles entrent à l'écran (100% CSS) — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .verticalSection {
+      animation: jfRevealUp linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+@keyframes jfRevealUp {
+  from { opacity: 0; transform: translateY(46px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* — Reflet / brillance qui glisse sur les affiches au survol — */
+@media (hover: hover) {
+  .cardImageContainer { position: relative; }
+  .cardImageContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    background: linear-gradient(115deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.28) 47%,
+        rgba(255, 255, 255, 0.06) 55%,
+        transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:hover .cardImageContainer::after { transform: translateX(130%); }
+}
+
+/* — Parallax doux sur les images de fond / backdrops — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .itemBackdrop,
+    .backdropImage {
+      animation: jfParallax linear both;
+      animation-timeline: view(block);
+      animation-range: cover;
+      will-change: transform;
+    }
+  }
+}
+@keyframes jfParallax {
+  from { transform: translateY(-4%) scale(1.1); }
+  to   { transform: translateY(4%)  scale(1.1); }
+}
+
+/* — Header : transition + classes pilotées par jellyfin-effects.js — */
+.skinHeader {
+  transition:
+    transform  0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    background 0.45s ease !important;
+  will-change: transform;
+}
+.skinHeader.jf-header-hidden { transform: translateY(-105%) !important; }
+.skinHeader.jf-header-shrink { box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6) !important; }
+
+/* — Accessibilité : respect de "réduire les animations" — */
+@media (prefers-reduced-motion: reduce) {
+  .skinHeader.jf-header-hidden { transform: none !important; }
+}

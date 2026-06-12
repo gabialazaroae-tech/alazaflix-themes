@@ -1,0 +1,386 @@
+/* =====================================================================
+   JELLYFIN — Thème "Aurora Cyan"
+   ---------------------------------------------------------------------
+   Fond sombre bleuté · accent cyan · coins très arrondis
+   Animations : révélation au scroll · parallax · zoom+élévation au survol
+               · brillance qui glisse · header qui se réduit · responsive
+   ---------------------------------------------------------------------
+   INSTALLATION
+   1. Jellyfin → Tableau de bord → Général → "CSS personnalisé"
+   2. Colle TOUT ce fichier dans la case, puis Enregistre.
+   3. (Optionnel) Pour le tilt 3D qui suit la souris et le header qui
+      disparaît selon le sens du scroll, ajoute aussi jellyfin-effects.js
+      (voir la notice en haut de ce fichier .js).
+   ---------------------------------------------------------------------
+   Tu peux régler le thème en modifiant les variables ci-dessous.
+   ===================================================================== */
+
+:root {
+  /* — Couleurs — */
+  --jf-bg-0:        #05070e;   /* fond le plus profond            */
+  --jf-bg-1:        #0a1020;   /* fond intermédiaire              */
+  --jf-bg-2:        #111c34;   /* surfaces                        */
+  --jf-surface:     rgba(18, 28, 52, 0.55);
+  --jf-surface-2:   rgba(24, 38, 68, 0.75);
+  --jf-border:      rgba(120, 170, 230, 0.14);
+
+  --jf-accent:      #22d3ee;   /* cyan principal                  */
+  --jf-accent-2:    #38bdf8;   /* cyan-bleu secondaire            */
+  --jf-accent-soft: rgba(34, 211, 238, 0.16);
+  --jf-glow:        rgba(34, 211, 238, 0.55);
+
+  --jf-text:        #e9f1ff;
+  --jf-text-dim:    #93a6c8;
+
+  /* — Formes — */
+  --jf-radius:      22px;      /* cartes / boutons                */
+  --jf-radius-lg:   30px;      /* grandes surfaces                */
+
+  /* — Mouvement (doux & fluide) — */
+  --jf-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+  --jf-ease-soft:   cubic-bezier(0.4, 0, 0.2, 1);
+  --jf-dur:         0.55s;
+  --jf-dur-fast:    0.32s;
+}
+
+/* =====================================================================
+   1. FOND GÉNÉRAL
+   ===================================================================== */
+html,
+body,
+.backgroundContainer,
+.mainAnimatedPages,
+.backdropContainer {
+  background-color: var(--jf-bg-0) !important;
+}
+
+body {
+  background:
+    radial-gradient(1200px 700px at 15% -10%, rgba(34, 211, 238, 0.10), transparent 60%),
+    radial-gradient(1000px 800px at 100% 0%, rgba(56, 189, 248, 0.08), transparent 55%),
+    radial-gradient(900px 900px at 50% 120%, rgba(34, 211, 238, 0.06), transparent 60%),
+    linear-gradient(180deg, var(--jf-bg-1) 0%, var(--jf-bg-0) 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--jf-text);
+}
+
+.backgroundContainer.withBackdrop { background: transparent !important; }
+
+/* Léger voile pour garder le texte lisible par-dessus les fan-art */
+.backdropImage,
+.backgroundContainer.withBackdrop::after {
+  filter: saturate(1.1);
+}
+
+/* =====================================================================
+   2. EN-TÊTE (header) — verre dépoli + réduction au scroll
+   ===================================================================== */
+.skinHeader {
+  background: linear-gradient(180deg,
+      rgba(10, 16, 32, 0.92) 0%,
+      rgba(10, 16, 32, 0.55) 70%,
+      rgba(10, 16, 32, 0) 100%) !important;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid var(--jf-border);
+  transition:
+    transform   0.45s var(--jf-ease),
+    padding     0.45s var(--jf-ease),
+    background  0.45s var(--jf-ease),
+    box-shadow  0.45s var(--jf-ease);
+  will-change: transform;
+}
+
+/* Classe ajoutée par jellyfin-effects.js : header masqué quand on
+   descend, réaffiché quand on remonte. */
+.skinHeader.jf-header-hidden { transform: translateY(-105%); }
+.skinHeader.jf-header-shrink {
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Réduction douce du header au scroll, 100 % CSS (fallback si pas de JS) */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .skinHeader {
+      animation: jf-header-condense linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 160px;
+    }
+  }
+}
+@keyframes jf-header-condense {
+  to {
+    background: rgba(8, 13, 26, 0.96);
+    box-shadow: 0 12px 40px -14px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* =====================================================================
+   3. CARTES (affiches, vignettes, sections d'accueil)
+   ===================================================================== */
+.card {
+  /* on autorise le débordement pour que l'ombre/glow respire au survol */
+  overflow: visible !important;
+}
+
+.cardBox {
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--jf-radius) !important;
+}
+
+.cardScalable {
+  border-radius: var(--jf-radius) !important;
+  transform-style: preserve-3d;
+  transition:
+    transform  var(--jf-dur)      var(--jf-ease),
+    box-shadow var(--jf-dur)      var(--jf-ease),
+    filter     var(--jf-dur-fast) var(--jf-ease);
+  will-change: transform;
+}
+
+.cardImageContainer,
+.cardImage,
+.cardOverlayContainer {
+  border-radius: var(--jf-radius) !important;
+  overflow: hidden;
+}
+
+/* — Survol : zoom + élévation + halo cyan (intensité élevée) — */
+@media (hover: hover) {
+  .card:hover .cardScalable,
+  .card:focus-within .cardScalable {
+    transform: translateY(-12px) scale(1.07);
+    box-shadow:
+      0 28px 60px -22px var(--jf-glow),
+      0 14px 30px -18px rgba(0, 0, 0, 0.8),
+      0 0 0 2px rgba(34, 211, 238, 0.85);
+    filter: saturate(1.12);
+    z-index: 5;
+  }
+
+  /* — Brillance / reflet qui glisse en diagonale — */
+  .cardImageContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(115deg,
+        transparent 28%,
+        rgba(255, 255, 255, 0.30) 46%,
+        rgba(34, 211, 238, 0.25) 54%,
+        transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.85s var(--jf-ease);
+    z-index: 3;
+  }
+  .card:hover .cardImageContainer::after,
+  .card:focus-within .cardImageContainer::after {
+    transform: translateX(130%);
+  }
+}
+
+/* Texte sous les cartes */
+.cardText { color: var(--jf-text); }
+.cardText-secondary { color: var(--jf-text-dim); }
+.card:hover .cardText-first { color: var(--jf-accent); transition: color .3s var(--jf-ease); }
+
+/* Boutons d'overlay (lecture, favori…) */
+.cardOverlayButton,
+.cardOverlayButtonIcon {
+  transition: transform .3s var(--jf-ease), color .3s var(--jf-ease);
+}
+.cardOverlayButton:hover { color: var(--jf-accent); transform: scale(1.18); }
+
+/* Overlay de survol : voile + bouton lecture qui apparaissent en fondu */
+.cardOverlayContainer {
+  opacity: 0;
+  background: linear-gradient(0deg, rgba(4, 10, 20, 0.55) 0%, transparent 55%);
+  transition: opacity .4s var(--jf-ease);
+}
+@media (hover: hover) {
+  .card:hover .cardOverlayContainer,
+  .card:focus-within .cardOverlayContainer { opacity: 1; }
+}
+
+/* =====================================================================
+   4. RÉVÉLATION AU SCROLL  (cartes & sections qui montent en fondu)
+   100 % CSS via scroll-driven animations. Si le navigateur ne supporte
+   pas animation-timeline, tout reste visible normalement (aucun bug).
+   ===================================================================== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    .verticalSection,
+    .homeSectionsContainer > div,
+    .sectionTitleContainer {
+      animation: jf-rise linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 60%;
+    }
+
+    .card {
+      animation: jf-rise-card linear both;
+      animation-timeline: view(block);
+      animation-range: entry 2% entry 55%;
+    }
+  }
+}
+
+@keyframes jf-rise {
+  from { opacity: 0; transform: translateY(46px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes jf-rise-card {
+  from { opacity: 0; transform: translateY(40px) scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* =====================================================================
+   5. PARALLAX léger sur les images de fond / backdrops
+   ===================================================================== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .itemBackdrop,
+    .backdropImage,
+    .detailImageContainer .cardImage {
+      animation: jf-parallax linear both;
+      animation-timeline: view(block);
+      animation-range: cover;
+      will-change: transform;
+    }
+  }
+}
+@keyframes jf-parallax {
+  from { transform: translateY(-5%) scale(1.12); }
+  to   { transform: translateY(5%)  scale(1.12); }
+}
+
+/* =====================================================================
+   6. BOUTONS, CHAMPS, ÉLÉMENTS D'INTERFACE
+   ===================================================================== */
+.button-flat,
+.emby-button,
+.raised,
+.detailButton,
+.btnPlay {
+  border-radius: 999px !important;
+  transition:
+    transform   .3s var(--jf-ease),
+    box-shadow  .3s var(--jf-ease),
+    background  .3s var(--jf-ease);
+}
+
+.button-submit,
+.raised.button-submit,
+.btnPlay {
+  background: linear-gradient(135deg, var(--jf-accent), var(--jf-accent-2)) !important;
+  color: #04121a !important;
+  box-shadow: 0 10px 26px -10px var(--jf-glow);
+}
+
+.emby-button:hover,
+.raised:hover,
+.detailButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -12px var(--jf-glow);
+}
+
+/* Champs de saisie */
+.emby-input,
+.emby-textarea,
+.emby-select {
+  border-radius: 14px !important;
+  background: var(--jf-surface) !important;
+  border: 1px solid var(--jf-border) !important;
+  color: var(--jf-text) !important;
+  transition: border-color .3s var(--jf-ease), box-shadow .3s var(--jf-ease);
+}
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+  border-color: var(--jf-accent) !important;
+  box-shadow: 0 0 0 3px var(--jf-accent-soft) !important;
+  outline: none !important;
+}
+
+/* Onglets / pastilles actives */
+.emby-tab-button.is-active,
+.emby-tab-button-active { color: var(--jf-accent) !important; }
+.emby-tabs-slider,
+.emby-button.button-link.is-active::after { background: var(--jf-accent) !important; }
+
+/* Barre de progression de lecture */
+.itemProgressBarForeground,
+.mediaSlider-background-lower,
+input[type="range"]::-webkit-slider-thumb {
+  background: linear-gradient(90deg, var(--jf-accent-2), var(--jf-accent)) !important;
+}
+
+/* Cartes/sections, listes, dialogues : surfaces arrondies cohérentes */
+.paper-icon-button-light:hover { color: var(--jf-accent) !important; }
+.listItem:hover,
+.listItem:focus { background: var(--jf-surface) !important; }
+.dialog,
+.formDialog,
+.actionSheet,
+.card .cardFooter { border-radius: var(--jf-radius-lg) !important; }
+
+/* Liens / accent global */
+a, .button-link { color: var(--jf-accent-2); }
+::selection { background: var(--jf-accent); color: #04121a; }
+
+/* Barre de défilement */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.35);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(34, 211, 238, 0.6); background-clip: content-box; }
+
+/* =====================================================================
+   7. RESPONSIVE — adaptation TV / desktop / tablette / mobile
+   ===================================================================== */
+
+/* Grand écran / TV : on amplifie un peu les arrondis et le halo */
+@media (min-width: 1600px) {
+  :root { --jf-radius: 26px; --jf-radius-lg: 36px; }
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  :root { --jf-radius: 18px; --jf-radius-lg: 24px; }
+}
+
+/* Mobile : coins un peu plus serrés, effets de survol allégés */
+@media (max-width: 600px) {
+  :root { --jf-radius: 14px; --jf-radius-lg: 20px; --jf-dur: 0.45s; }
+  .skinHeader { backdrop-filter: blur(12px) saturate(140%); }
+}
+
+/* Appareils tactiles (mobiles, TV sans souris) :
+   on remplace le survol par un effet d'appui plus sobre */
+@media (hover: none) {
+  .cardScalable { transition: transform .3s var(--jf-ease), box-shadow .3s var(--jf-ease); }
+  .card:active .cardScalable {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 2px var(--jf-accent);
+  }
+}
+
+/* =====================================================================
+   8. ACCESSIBILITÉ — respect de "réduire les animations"
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.12s !important;
+  }
+  .skinHeader.jf-header-hidden { transform: none; }
+}

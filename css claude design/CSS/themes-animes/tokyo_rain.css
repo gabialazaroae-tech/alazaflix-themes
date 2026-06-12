@@ -1,0 +1,440 @@
+/* =========================================================
+   TOKYO RAIN THEME FOR JELLYFIN
+   Design: Lofi urbain, mélancolique, intimiste
+   Colors: Charbon humide, néon bleu, rouge izakaya
+   ========================================================= */
+
+.backgroundContainer {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(10, 12, 20, 0.35) 0%,
+            rgba(15, 17, 28, 0.62) 50%,
+            rgba(8, 10, 16, 0.88) 100%
+        ),
+        url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=3440") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+:root {
+    --tokyo-black: #0A0C14;
+    --tokyo-dark: #0F1120;
+    --tokyo-mid: #1C2035;
+    --tokyo-neon-blue: #2979FF;
+    --tokyo-red: #FF1744;
+    --tokyo-amber: #FFB300;
+    --tokyo-teal: #00BCD4;
+    --tokyo-mist: #B0BEC5;
+    --text-light: #ECEFF1;
+    --text-muted: #78909C;
+}
+
+.skinHeader {
+    background: linear-gradient(180deg, rgba(10, 12, 20, 0.97) 0%, rgba(15, 17, 28, 0.94) 100%) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(41, 121, 255, 0.18);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 23, 68, 0.08);
+}
+
+.headerLogo {
+    filter: brightness(1.1) drop-shadow(0 0 10px rgba(41, 121, 255, 0.5));
+}
+
+.mainDrawer, .dialog, .emby-dialog, .drawer-open, .actionSheetContent {
+    background: linear-gradient(145deg, rgba(10, 12, 20, 0.98) 0%, rgba(28, 32, 53, 0.96) 100%) !important;
+    backdrop-filter: blur(22px) saturate(180%);
+    border: 1px solid rgba(41, 121, 255, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.9);
+}
+
+.navMenuOption {
+    border-radius: 6px;
+    margin: 4px 8px;
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navMenuOption:hover {
+    background: rgba(41, 121, 255, 0.1) !important;
+    border-left: 3px solid var(--tokyo-red);
+    transform: translateX(4px);
+    color: var(--tokyo-amber) !important;
+}
+
+.card {
+    background: rgba(15, 17, 28, 0.45) !important;
+    border: 1px solid rgba(41, 121, 255, 0.08) !important;
+    border-radius: 20px !important;
+    transition: all 0.35s ease;
+    padding-left: 10px !important;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-top: 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.card.overflowPortraitCard {
+    background: rgba(15, 17, 28, 0.45) !important;
+    border: 1px solid rgba(41, 121, 255, 0.08) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 10px;
+    padding-left: 0px !important;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    background: rgba(15, 17, 28, 0.45) !important;
+    border: 1px solid rgba(41, 121, 255, 0.08) !important;
+    border-radius: 15px !important;
+    transition: all 0.35s ease;
+    padding-top: 12px;
+    padding-left: 17px !important;
+    padding-right: 17px;
+    margin: 5px 5px 5px 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px !important;
+    margin: 0 !important;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0px 0px 17px !important;
+    margin: 0 15px 0 0 !important;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0px 1px !important;
+    margin: 0 !important;
+}
+
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(41, 121, 255, 0.25),
+        0 0 40px rgba(255, 23, 68, 0.08);
+    border-color: rgba(41, 121, 255, 0.3);
+}
+
+.cardOverlayButton, .cardOverlayContainer {
+    background: linear-gradient(to top, rgba(10, 12, 20, 0.97) 0%, rgba(10, 12, 20, 0.7) 50%, rgba(10, 12, 20, 0) 100%) !important;
+}
+
+body, .pageTitle, .sectionTitle, .listItemBodyText {
+    font-family: 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+    color: var(--text-light) !important;
+    letter-spacing: 0.015em;
+}
+
+.sectionTitle {
+    font-size: 1.7em !important;
+    font-weight: 600 !important;
+    color: var(--tokyo-amber) !important;
+    text-shadow: 0 0 12px rgba(255, 179, 0, 0.4), 0 2px 10px rgba(255, 179, 0, 0.2);
+    margin-bottom: 24px !important;
+    letter-spacing: 0.03em;
+}
+
+.pageTitle {
+    font-size: 2.2em !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #FF1744 0%, #2979FF 60%, #FFB300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.itemName, .cardText {
+    color: #ECEFF1 !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cardText-secondary, .metadataLine, .secondaryText {
+    color: var(--text-muted) !important;
+    font-size: 0.9em;
+}
+
+.button-flat, .raised, .fab, .emby-button {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button-flat:hover, .raised:hover, .emby-button:hover {
+    border-color: var(--tokyo-neon-blue);
+    transform: translateY(-2px);
+}
+
+.btnPlay {
+    background: linear-gradient(135deg, #FF1744 0%, #2979FF 100%) !important;
+    color: #ECEFF1 !important;
+    font-weight: 600 !important;
+    border: none;
+    box-shadow: 0 4px 20px rgba(255, 23, 68, 0.3);
+}
+
+.btnPlay:hover {
+    background: linear-gradient(135deg, #FF4169 0%, #448AFF 100%) !important;
+    box-shadow: 0 8px 30px rgba(255, 23, 68, 0.5);
+    transform: translateY(-3px);
+}
+
+.emby-tab-button {
+    color: var(--text-muted) !important;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.emby-tab-button:hover {
+    color: var(--tokyo-amber) !important;
+    border-bottom-color: rgba(255, 179, 0, 0.3);
+}
+
+.emby-tab-button.emby-tab-button-active {
+    color: var(--tokyo-neon-blue) !important;
+    border-bottom-color: var(--tokyo-neon-blue);
+    font-weight: 600;
+}
+
+.itemProgressBar {
+    background: rgba(41, 121, 255, 0.2) !important;
+    box-shadow: 0 0 6px rgba(41, 121, 255, 0.15);
+}
+.itemProgressBarForeground {
+    background: linear-gradient(90deg, #FF1744 0%, #2979FF 100%) !important;
+    box-shadow: 0 0 8px rgba(41, 121, 255, 0.5);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(10, 12, 20, 0.5); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1C2035 0%, #0F1120 100%);
+    border-radius: 3px;
+    border: 2px solid rgba(41, 121, 255, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #2979FF 0%, #FF1744 100%);
+    border-color: rgba(41, 121, 255, 0.4);
+}
+
+.videoOsdBottom { background: linear-gradient(to top, rgba(10, 12, 20, 0.97) 0%, rgba(10, 12, 20, 0) 100%) !important; }
+.osdHeader { background: linear-gradient(to bottom, rgba(10, 12, 20, 0.97) 0%, rgba(10, 12, 20, 0) 100%) !important; }
+
+.detailImageContainer {
+    border-radius: 6px;
+    overflow: visible !important;
+    max-width: 150px !important;
+    max-height: 250px !important;
+    background: rgba(15, 17, 28, 0.5) !important;
+    border: 1px solid rgba(41, 121, 255, 0.15);
+    padding: 0 !important;
+}
+.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
+.itemBackdrop { filter: brightness(0.68) saturate(1.25); }
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    background: rgba(15, 17, 28, 0.7) !important;
+    border: 1px solid rgba(41, 121, 255, 0.2) !important;
+    border-radius: 6px;
+    color: var(--text-light) !important;
+    padding: 10px 14px;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--tokyo-neon-blue) !important;
+    box-shadow: 0 0 0 3px rgba(41, 121, 255, 0.15);
+    outline: none;
+}
+
+.mediaInfoItem, .itemTag {
+    background: rgba(41, 121, 255, 0.12) !important;
+    color: var(--tokyo-amber) !important;
+    border: 1px solid rgba(255, 179, 0, 0.25);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+* { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.itemsContainer, .scrollSlider { animation: tokyoFadeIn 0.7s ease-out; }
+
+@keyframes tokyoFadeIn {
+    from { opacity: 0; transform: translateY(18px); filter: saturate(0.5); }
+    to { opacity: 1; transform: translateY(0); filter: saturate(1); }
+}
+
+.card:hover { animation: tokyoNeonPulse 3s ease-in-out infinite; }
+
+@keyframes tokyoNeonPulse {
+    0%, 100% { box-shadow: 0 12px 40px rgba(0,0,0,.7), 0 0 18px rgba(41,121,255,.25); }
+    50% { box-shadow: 0 12px 40px rgba(0,0,0,.7), 0 0 24px rgba(255,23,68,.2); }
+}
+
+@media (max-width: 768px) {
+    .sectionTitle { font-size: 1.4em !important; }
+    .pageTitle { font-size: 1.8em !important; }
+}
+
+/* Rain effect overlay */
+.backgroundContainer::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(41, 121, 255, 0.012) 3px,
+            rgba(41, 121, 255, 0.012) 4px
+        ),
+        radial-gradient(ellipse at 50% 100%, rgba(41, 121, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 23, 68, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    animation: rainShimmer 8s linear infinite;
+}
+
+@keyframes rainShimmer {
+    from { background-position: 0 0; }
+    to { background-position: 0 100px; }
+}
+
+/* Wet asphalt scanlines */
+.itemsContainer::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg, transparent, transparent 3px,
+        rgba(41, 121, 255, 0.015) 3px,
+        rgba(41, 121, 255, 0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.headerLogo {
+    display: none !important;
+}
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-size: 250px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 70px !important;
+    height: 100px !important;
+    flex-shrink: 0;
+}
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+/* =====================================================================
+   ✦ MODULE ANIMATIONS — ajouté au thème ci-dessus
+   ---------------------------------------------------------------------
+   Révélation au scroll · parallax · reflet glissant · header intelligent.
+   100% neutre : ne touche ni aux couleurs ni aux survols de ton thème.
+   Pour le tilt 3D qui suit la souris + le header qui se masque selon le
+   sens du scroll, ajoute aussi jellyfin-effects.js au client web
+   (voir la notice en haut de ce fichier .js).
+   ===================================================================== */
+
+/* — Révélation des sections quand elles entrent à l'écran (100% CSS) — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .verticalSection {
+      animation: jfRevealUp linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+@keyframes jfRevealUp {
+  from { opacity: 0; transform: translateY(46px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* — Reflet / brillance qui glisse sur les affiches au survol — */
+@media (hover: hover) {
+  .cardImageContainer { position: relative; }
+  .cardImageContainer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    background: linear-gradient(115deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.28) 47%,
+        rgba(255, 255, 255, 0.06) 55%,
+        transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:hover .cardImageContainer::after { transform: translateX(130%); }
+}
+
+/* — Parallax doux sur les images de fond / backdrops — */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    .itemBackdrop,
+    .backdropImage {
+      animation: jfParallax linear both;
+      animation-timeline: view(block);
+      animation-range: cover;
+      will-change: transform;
+    }
+  }
+}
+@keyframes jfParallax {
+  from { transform: translateY(-4%) scale(1.1); }
+  to   { transform: translateY(4%)  scale(1.1); }
+}
+
+/* — Header : transition + classes pilotées par jellyfin-effects.js — */
+.skinHeader {
+  transition:
+    transform  0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    background 0.45s ease !important;
+  will-change: transform;
+}
+.skinHeader.jf-header-hidden { transform: translateY(-105%) !important; }
+.skinHeader.jf-header-shrink { box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6) !important; }
+
+/* — Accessibilité : respect de "réduire les animations" — */
+@media (prefers-reduced-motion: reduce) {
+  .skinHeader.jf-header-hidden { transform: none !important; }
+}

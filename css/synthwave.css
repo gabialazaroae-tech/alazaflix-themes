@@ -406,7 +406,7 @@ input:focus, textarea:focus, select:focus {
 .pageTitleWithDefaultLogo::before {
     content: "";
     display: inline-block;
-    background-image: url("https://imgur.com/gallery/logo-jellyfin-6SiFH7u#45Rogff") !important;
+    background-image: url("https://i.imgur.com/45Rogff.png") !important;
     background-size: 250px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;

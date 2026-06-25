@@ -466,7 +466,7 @@ select:focus {
 .pageTitleWithDefaultLogo::before {
     content: "";
     display: inline-block;
-    background-image: url("https://imgur.com/gallery/logo-jellyfin-6SiFH7u#Bcgmcej") !important;
+    background-image: url("https://i.imgur.com/Bcgmcej.png") !important;
     background-size: 250px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;

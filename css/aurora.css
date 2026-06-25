@@ -360,12 +360,12 @@ input:focus, textarea:focus, select:focus {
 .pageTitleWithDefaultLogo::before {
     content: "";
     display: inline-block;
-    background-image: url("https://imgur.com/gallery/logo-jellyfin-6SiFH7u#4S1EoiQ") !important;
-    background-size: 250px !important;
+    background-image: url("https://i.imgur.com/4S1EoiQ.png") !important;
+    background-size: 50px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    width: 70px !important;
-    height: 100px !important;
+    width: 60px !important;
+    height: 60px !important;
     flex-shrink: 0;
 }
 .pageTitleWithDefaultLogo::after {

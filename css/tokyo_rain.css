@@ -345,7 +345,7 @@ input:focus, textarea:focus, select:focus {
     content: "";
     display: inline-block;
     background-image: url("https://imgur.com/gallery/logo-jellyfin-6SiFH7u#x2p8Ylm") !important;
-    background-size: 500px !important;
+    background-size: 250px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     width: 70px !important;

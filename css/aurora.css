@@ -376,12 +376,3 @@ input:focus, textarea:focus, select:focus {
     color: #ffffff;
     letter-spacing: 0.05em;
 }
-.pageTitleWithDefaultLogo::after {
-    font-family: 'Bebas Neue', sans-serif;
-    content: "AlazaFlix";
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-left: 3px;
-    letter-spacing: 0.05em;
-}

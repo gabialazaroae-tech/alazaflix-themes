@@ -82,12 +82,12 @@
 .card {
     background: rgb(39 53 71 / 45%) !important;
     border: 1px solid rgba(0, 229, 160, 0.08) !important;
-    border-radius: 20px !important;
+    border-radius: 25px !important;
     transition: all 0.35s ease;
     padding-left: 10px !important;
     padding-bottom: 0px;
     padding-right: 10px;
-    padding-top: 8px;
+    padding-top: 3px;
     margin: 5px 5px 5px 5px;
 }
 

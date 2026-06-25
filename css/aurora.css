@@ -366,6 +366,7 @@ input:focus, textarea:focus, select:focus {
     background-position: center !important;
     width: 60px !important;
     height: 60px !important;
+    margin-left: 5px !important;
     flex-shrink: 0;
 }
 .pageTitleWithDefaultLogo::after {
@@ -374,5 +375,6 @@ input:focus, textarea:focus, select:focus {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
+    margin-left: 3px;
     letter-spacing: 0.05em;
 }

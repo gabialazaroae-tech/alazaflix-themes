@@ -707,7 +707,7 @@ select:focus {
 .pageTitleWithDefaultLogo::before {
     content: "";
     display: inline-block;
-    background-image: url("https://i.imgur.com/IARmHYA.png") !important;
+    background-image: url("/logo/logo_studio_plex.png") !important;
     background-size: 250px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;

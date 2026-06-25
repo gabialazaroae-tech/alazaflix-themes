@@ -705,12 +705,13 @@ select:focus {
 .pageTitleWithDefaultLogo::before {
     content: "";
     display: inline-block;
-    background-image: url("https://imgur.com/gallery/logo-jellyfin-6SiFH7u#RTPfGa0") !important;
-    background-size: 500px !important;
+    background-image: url("https://i.imgur.com/RTPfGa0.png") !important;
+    background-size: 50px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    width: 230px !important;
-    height: 300px !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin-left: 5px !important;
     flex-shrink: 0;
 }
 .pageTitleWithDefaultLogo::after {
@@ -719,5 +720,6 @@ select:focus {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
+    margin-left: 3px;
     letter-spacing: 0.05em;
 }

@@ -356,6 +356,7 @@ input:focus, textarea:focus, select:focus {
     display: inline-flex !important;
     align-items: center !important;
     gap: 10px;
+    position: relative !important;
 }
 .pageTitleWithDefaultLogo::before {
     content: "";
@@ -368,6 +369,8 @@ input:focus, textarea:focus, select:focus {
     height: 60px !important;
     margin-left: 5px !important;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 .pageTitleWithDefaultLogo::after {
     font-family: 'Bebas Neue', sans-serif;
@@ -377,4 +380,6 @@ input:focus, textarea:focus, select:focus {
     color: #ffffff;
     margin-left: 3px;
     letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
 }

@@ -709,8 +709,8 @@ select:focus {
     background-size: 500px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    width: 400px !important;
-    height: 500px !important;
+    width: 230px !important;
+    height: 300px !important;
     flex-shrink: 0;
 }
 .pageTitleWithDefaultLogo::after {

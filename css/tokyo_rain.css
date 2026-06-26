@@ -364,4 +364,8 @@ input:focus, textarea:focus, select:focus {
     letter-spacing: 0.05em;
     position: relative;
     z-index: 2;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #ffffff !important;
 }

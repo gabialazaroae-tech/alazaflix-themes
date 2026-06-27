@@ -388,6 +388,3 @@ input:focus, textarea:focus, select:focus {
     -webkit-text-fill-color: #ffffff !important;
 }
 
-.itemsContainer {
-    justify-content: center !important;
-}

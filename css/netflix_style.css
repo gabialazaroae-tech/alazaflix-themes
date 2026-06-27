@@ -728,6 +728,3 @@ select:focus {
     position: relative;
     z-index: 2;
 }
-.itemsContainer {
-    justify-content: center !important;
-}

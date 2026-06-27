@@ -304,6 +304,10 @@ input:focus, textarea:focus, select:focus {
 
 * { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
+.itemsContainer {
+    justify-content: space-evenly !important;
+}
+
 .itemsContainer, .scrollSlider {
     animation: auroraFadeIn 0.8s ease-out;
 }

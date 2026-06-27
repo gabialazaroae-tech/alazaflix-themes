@@ -732,3 +732,6 @@ select:focus {
     background-clip: initial !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+.itemsContainer {
+    justify-content: center !important;
+}

@@ -468,11 +468,11 @@ select:focus {
     content: "";
     display: inline-block;
     background-image: url("https://i.imgur.com/Bcgmcej.png") !important;
-    background-size: 250px !important;
+    background-size: 50px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    width: 70px !important;
-    height: 100px !important;
+    width: 60px !important;
+    height: 60px !important;
     flex-shrink: 0;
     position: relative;
     z-index: 1;

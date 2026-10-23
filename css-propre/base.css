@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* =========================================================
+   ALAZAFLIX - BASE COMMUNE (a charger AVANT le theme)
+   Contient uniquement les regles strictement identiques dans
+   les themes : mise en page des cartes, cartes Top10, logo.
+   Chaque theme doit definir --alazaflix-logo-url dans son :root
+   et --alazaflix-logo-text-color si le blanc par defaut ne convient pas.
+   ========================================================= */
+
+/* =========================================================
+   FOND - proprietes de placement (l'image/degrade reste au theme)
+   ========================================================= */
+.backgroundContainer {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* =========================================================
+   CARTES - mise en page commune
+   ========================================================= */
+.card {
+    border-radius: 25px;
+    transition: all 0.35s ease;
+    padding: 3px 10px 0 10px;
+    margin: 5px;
+}
+
+.card.overflowPortraitCard {
+    border-radius: 15px;
+    padding: 10px 4px 10px 0;
+    margin: 5px 15px 5px 5px;
+}
+
+.card.overflowBackdropCard {
+    border-radius: 15px;
+    padding: 12px 17px 0 17px;
+    margin: 5px;
+}
+
+.portraitCard > .cardBox {
+    padding: 13px 9px 13px 10px;
+    margin: 0;
+}
+
+.overflowPortraitCard > .cardBox {
+    padding: 10px 0 0 17px;
+    margin: 0 15px 0 0;
+}
+
+.overflowBackdropCard > .cardBox {
+    padding: 12px 1px 0 1px;
+    margin: 0;
+}
+
+/* Top10 : suppression du cadre.
+   !important : doit battre le box-shadow de .card:hover (theme), meme specificite. */
+.top10-card,
+.top10-card .cardBox,
+.top10-card .cardImageContainer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* =========================================================
+   LOGO ALAZAFLIX (remplace le logo Jellyfin par defaut)
+   Effets .headerLogo supprimes : l'element est masque ci-dessous.
+   ========================================================= */
+.headerLogo {
+    display: none;
+}
+
+/* !important sur display et font-size : le titre porte aussi .pageTitle,
+   dont font-size (theme, charge apres) ecraserait font-size: 0 sinon. */
+.pageTitleWithDefaultLogo {
+    font-size: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.pageTitleWithDefaultLogo::before {
+    content: "";
+    display: inline-block;
+    background-image: var(--alazaflix-logo-url);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pas de !important : une declaration directe bat l'heritage du
+   degrade transparent de .pageTitle. */
+.pageTitleWithDefaultLogo::after {
+    font-family: 'Bebas Neue', sans-serif;
+    content: "AlazaFlix";
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--alazaflix-logo-text-color, #ffffff);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: var(--alazaflix-logo-text-color, #ffffff);
+}
+
+/* =========================================================
+   ACCESSIBILITE - reduction des animations
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    /* !important : doit battre les animations declarees dans les themes
+       (glow infini au survol, shimmer, fade-in, etc.). */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

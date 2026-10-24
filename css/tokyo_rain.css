@@ -235,16 +235,6 @@ body, .pageTitle, .sectionTitle, .listItemBodyText {
 .videoOsdBottom { background: linear-gradient(to top, rgba(10, 12, 20, 0.97) 0%, rgba(10, 12, 20, 0) 100%) !important; }
 .osdHeader { background: linear-gradient(to bottom, rgba(10, 12, 20, 0.97) 0%, rgba(10, 12, 20, 0) 100%) !important; }
 
-.detailImageContainer {
-    border-radius: 6px;
-    overflow: visible !important;
-    max-width: 150px !important;
-    max-height: 250px !important;
-    background: rgba(15, 17, 28, 0.5) !important;
-    border: 1px solid rgba(41, 121, 255, 0.15);
-    padding: 0 !important;
-}
-.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
 .itemBackdrop { filter: brightness(0.68) saturate(1.25); }
 
 input[type="text"], input[type="password"], input[type="email"], textarea, select {

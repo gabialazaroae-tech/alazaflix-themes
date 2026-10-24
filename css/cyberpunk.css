@@ -324,17 +324,6 @@ body,
 }
 
 /* MEDIA DETAILS */
-.detailImageContainer {
-    border-radius: 4px;
-    overflow: visible !important;
-    max-width: 150px !important;
-    max-height: 250px !important;
-    background: rgba(13, 0, 32, 0.5) !important;
-    border: 1px solid rgba(155, 48, 255, 0.3);
-    box-shadow: 0 0 20px rgba(155, 48, 255, 0.2);
-    padding: 0 !important;
-}
-.detailImageContainer img { width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; }
 .itemBackdrop { filter: brightness(0.65) saturate(1.4); }
 
 /* INPUTS */

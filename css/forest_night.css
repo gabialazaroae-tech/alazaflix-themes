@@ -324,23 +324,8 @@ body,
 /* =========================================================
    DÉTAILS MÉDIA - Page détaillée
    ========================================================= */
-.detailImageContainer {
-    border-radius: 12px;
-    overflow: visible !important;
-    max-width: 150px !important;
-    max-height: 250px !important;
-    background: rgba(26, 40, 32, 0.4) !important;
-    border: 1px solid rgba(212, 175, 55, 0.08);
-    padding: 0 !important;
-}
 
 /* Image du poster bien contenue */
-.detailImageContainer img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    display: block !important;
-}
 
 .itemBackdrop {
     filter: brightness(0.7) saturate(1.2);

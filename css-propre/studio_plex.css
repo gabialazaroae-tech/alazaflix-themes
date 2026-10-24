@@ -448,23 +448,8 @@ body,
    DETAILS MEDIA
    ========================================================= */
 /* !important sur max-width/max-height : tailles definies par media queries Jellyfin. */
-.detailImageContainer {
-    border-radius: 12px;
-    overflow: visible;
-    max-width: 150px !important;
-    max-height: 250px !important;
-    background: rgba(var(--plex-dark-rgb), 0.5);
-    border: 1px solid rgba(var(--plex-orange-rgb), 0.15);
-    padding: 0;
-}
 
 /* !important : l'image du poster doit rester contenue malgre les styles inline Jellyfin. */
-.detailImageContainer img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    display: block;
-}
 
 .itemBackdrop {
     filter: brightness(0.75) saturate(1.25) contrast(1.08);
